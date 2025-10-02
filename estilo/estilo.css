@@ -22,7 +22,7 @@ body {
 
 /* Selector header: color de fondo del encabezado */
 header {
-    background-color: #6c1717; /* Fondo oscuro del header */
+    background-color: #222222; /* Fondo oscuro del header */
     padding: 15px;
 }
 
@@ -92,4 +92,5 @@ th {
     background-color: #eee; /* Fondo claro para celdas de encabezado */
     font-weight: bold;
 }
+
 

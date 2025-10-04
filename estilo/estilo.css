@@ -14,8 +14,6 @@ body {
     font-family: "Verdana", sans-serif; /* Fuente heredada a todos los elementos */
     font-size: 16px; /* Tamaño base */
     line-height: 1.5; /* Mejora legibilidad */
-    margin: 0;
-    padding: 0;
     background-color: #f5f5f5; /* Color de fondo de la página */
     color: #333333; /* Color de texto principal */
 }
@@ -24,16 +22,31 @@ body {
 header {
     background-color: #222222; /* Fondo oscuro del header */
     color:#ffffff; /* Color del texto del header */
-    padding: 15px;
+}
+header a {
+    text-decoration-line: none;
+    color: #ffffff; /* Color del texto de los enlaces del header */
+    font-weight: bold;
 }
 
+header a:hover {
+    color: #ffeb3b;
+}
 
+/* Migas de pan */
+header + p {
+  font-size: 0.9rem; /* tamaño más pequeño */
+}
+
+header + p strong {
+  color: red;      /* destaca la página actual */
+  font-weight: bold;
+}
 
 /* Selector h1: encabezado principal */
 h1 {
     font-family: "Georgia", serif;
     font-size: 2em;
-    margin-bottom: 0.5em;
     color: #e53935; /* Color del texto del h1 */
     background-color: inherit;
 }
@@ -42,7 +55,6 @@ h1 {
 h2 {
     font-family: "Georgia", serif;
     font-size: 1.5em;
-    margin-bottom: 0.5em;
     color: #e53935; /* Color de los h2 */
     /*Color de fondo heredado, advertencia permitida debido a herencia*/
 }
@@ -50,14 +62,17 @@ h2 {
 /* Selector nav: menú de navegación */
 nav {
     background-color: #222222; /* Fondo oscuro heredado a enlaces */
-    padding: 10px;
 }
 
 /* Selector nav a: enlaces dentro del menú */
 nav a {
     color: #ffffff; /* Color de texto de los enlaces */
     text-decoration: none;
-    margin-right: 15px;
+}
+
+nav a.active {
+  color: red;            /* cambiar color de texto */
+ 
 }
 
 /* Selector nav a:hover: efecto al pasar el ratón */
@@ -68,26 +83,22 @@ nav a:hover {
 
 /* Selector p: párrafos generales */
 p {
-    margin: 0 0 1em 0;
 }
 
 /* Selector ul, ol: listas */
 ul, ol {
-    margin: 0 0 1em 2em;
 }
 
 /* Selector table: estilo básico de tablas */
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 1em;
     background-color: #ffffff; /* Fondo blanco para contraste */
 }
 
 /* Selector th, td: celdas de tablas */
 th, td {
     border: 1px solid #ccc;
-    padding: 8px;
     text-align: left;
     color: #333333; /* Color del texto heredado */
 }

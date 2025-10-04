@@ -1,0 +1,81 @@
+/*
+    Datos personales:
+    Nombre: Andrea Acero Suárez
+    UO: UO287876
+    Fecha: 20/06/2024
+*/
+
+/*
+    Descripción: Esquema de posicionamiento que contiene la reglas a aplicar en el proyecto MotoGP-Desktop
+*/
+
+/*
+    Selector header: usa Flexbox para distribuir el contenido del encabezado
+*/
+header {
+    display: flex;                 /* Activa Flexbox */
+    justify-content: space-between; /* Separa h1 a la izquierda y nav a la derecha */
+    align-items: center;           /* Centra verticalmente h1 y nav */
+}
+
+/*
+    Selector nav: usa Flexbox para distribuir los enlaces del menú
+*/
+nav {
+    display: flex;                 /* Activa Flexbox para los enlaces */
+    gap: 1rem;                     /* Espacio básico entre los enlaces */
+}
+
+/*Media query para pantallas pequeñas (móviles)*/
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;    /* Apila h1 y nav verticalmente */
+        align-items: flex-start;   /* Alinea a la izquierda */
+    }
+    nav {
+        flex-direction: column;    /* Apila los enlaces verticalmente */
+        gap: 0.5rem;               /* Espacio entre los enlaces Se redefine gap*/
+    }
+    header + p{
+        display: none;           /* Oculta las migas de pan en móviles */
+    }
+    /*Video y audio adaptables*/
+    video, audio {
+        width: 100%;              /* Ocupa todo el ancho del contenedor */
+        height: auto;             /* Mantiene la proporción */
+    }
+}
+
+/*Media query para pantallas medianas (tablet)*/
+@media (min-width: 601px) and (max-width: 1024px) {
+   header {
+        flex-direction: column;    /* Apila h1 y nav verticalmente */
+        align-items: flex-start;   /* Alinea a la izquierda */
+    }
+    nav {
+        flex-direction: row;          /* Enlaces en fila para mejor lectura */
+        flex-wrap: wrap;              /* Permite que bajen de línea si no caben */
+        gap: 0.7rem;               /* Espacio entre los enlaces Se redefine gap*/
+    }
+    /*Video y audio adaptables*/
+    video, audio {
+        width: 100%;              /* Ocupa todo el ancho del contenedor */
+        height: auto;             /* Mantiene la proporción */
+    }
+}
+/*Media query para pantallas grandes (escritorio)*/
+@media (min-width: 1025px) {
+    header {
+        flex-direction: row;       /* H1 y nav en una fila */
+        align-items: center;       /* Centra verticalmente */
+    }
+    nav {
+        flex-direction: row;       /* Enlaces en una fila */
+        gap: 1rem;                 /* Espacio entre los enlaces Se redefine gap*/
+    }
+    /*Video y audio adaptables*/
+    video, audio {
+        width: auto;               /* Tamaño original */
+        height: auto;              /* Tamaño original */
+    }
+}

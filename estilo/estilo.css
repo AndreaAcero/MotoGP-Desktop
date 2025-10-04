@@ -23,8 +23,11 @@ body {
 /* Selector header: color de fondo del encabezado */
 header {
     background-color: #222222; /* Fondo oscuro del header */
+    color:#ffffff; /* Color del texto del header */
     padding: 15px;
 }
+
+
 
 /* Selector h1: encabezado principal */
 h1 {
@@ -32,6 +35,7 @@ h1 {
     font-size: 2em;
     margin-bottom: 0.5em;
     color: #e53935; /* Color del texto del h1 */
+    background-color: inherit;
 }
 
 /* Selector h2: encabezados secundarios */
@@ -40,6 +44,7 @@ h2 {
     font-size: 1.5em;
     margin-bottom: 0.5em;
     color: #e53935; /* Color de los h2 */
+    /*Color de fondo heredado, advertencia permitida debido a herencia*/
 }
 
 /* Selector nav: menú de navegación */
@@ -92,5 +97,3 @@ th {
     background-color: #eee; /* Fondo claro para celdas de encabezado */
     font-weight: bold;
 }
-
-

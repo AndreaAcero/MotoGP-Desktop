@@ -44,6 +44,18 @@ nav {
         width: 100%;              /* Ocupa todo el ancho del contenedor */
         height: auto;             /* Mantiene la proporción */
     }
+     table, th, td {
+        display: block;           /* Cada celda en bloque vertical */
+        width: 100%;              /* Ocupa todo el ancho disponible */
+    }
+    th {
+        background-color: #e53935; /* Encabezados más visibles en móvil */
+        color: #ffffff;
+    }
+    td {
+        border: none;             /* Sin bordes para simplificar */
+        padding: 0.5rem 0;        /* Espacio vertical */
+    }
 }
 
 /*Media query para pantallas medianas (tablet)*/

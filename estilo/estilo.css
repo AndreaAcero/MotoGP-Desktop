@@ -10,6 +10,7 @@
 */
 
 /* Selector body: aplica tipografía y colores base por herencia */
+/* Especificidad 001*/
 body {
     font-family: "Verdana", sans-serif; /* Fuente heredada a todos los elementos */
     font-size: 16px; /* Tamaño base */
@@ -19,84 +20,132 @@ body {
 }
 
 /* Selector header: color de fondo del encabezado */
+/* Especificidad 001*/
 header {
     background-color: #222222; /* Fondo oscuro del header */
     color:#ffffff; /* Color del texto del header */
 }
+/*especificidad 001, 002*/
 header a {
     text-decoration-line: none;
     color: #ffffff; /* Color del texto de los enlaces del header */
     font-weight: bold;
 }
-
+/* Especificidad 012*/
 header a:hover {
     color: #ffeb3b;
 }
 
 /* Migas de pan */
+/* Especificidad 002*/
 header + p {
   font-size: 0.9rem; /* tamaño más pequeño */
 }
 
+/* Especificidad 003*/
 header + p strong {
   color: red;      /* destaca la página actual */
   font-weight: bold;
 }
 
 /* Selector h1: encabezado principal */
+/* Especificidad 001*/
 h1 {
     font-family: "Georgia", serif;
     font-size: 2em;
     color: #e53935; /* Color del texto del h1 */
-    background-color: inherit;
+    background-color: inherit; /* Herencia del fondo */
 }
 
 /* Selector h2: encabezados secundarios */
+/* Especificidad 001*/
 h2 {
     font-family: "Georgia", serif;
     font-size: 1.5em;
     color: #e53935; /* Color de los h2 */
-    /*Color de fondo heredado, advertencia permitida debido a herencia*/
+    /* Advertencia: se redefine el color y tamaño; herencia correcta del fondo */
+}
+/* Encabezados generales: h3 a h6 */
+/* Especificidad 001 */
+h3, h4, h5, h6 {
+    font-family: "Georgia", serif; /* Fuente elegante y legible */
+    font-size: 1.2em; /* Tamaño uniforme y adaptativo */
+    color: #555555; /* Color principal para encabezados */
+    /* Advertencia: se redefine color y tamaño; se hereda el fondo correctamente */
 }
 
 /* Selector nav: menú de navegación */
+/* Especificidad 001*/
 nav {
     background-color: #222222; /* Fondo oscuro heredado a enlaces */
 }
 
 /* Selector nav a: enlaces dentro del menú */
+/* Especificidad 002*/
 nav a {
     color: #ffffff; /* Color de texto de los enlaces */
     text-decoration: none;
 }
-
+/* Especificidad 011 (.active = 010 + a = 001) */
 nav a.active {
   color: red;            /* cambiar color de texto */
  
 }
 
 /* Selector nav a:hover: efecto al pasar el ratón */
+/* Especificidad 012*/
 nav a:hover {
     text-decoration: underline;
     color: #ffeb3b; /* Color amarillo para contraste en hover */
 }
 
 /* Selector p: párrafos generales */
+/* Especificidad 001*/
 p {
+    font-size: 1rem;
+    line-height: 1.5; /* Mejora legibilidad */
+    margin-bottom: 1rem; /* Espacio inferior entre párrafos */
+    color: inherit; /* Color heredado */
 }
 
-/* Selector ul, ol: listas */
-ul, ol {
+/* Listas ordenadas y no ordenadas */
+/* Especificidad 001 */
+ul { 
+    list-style-type: disc;    /* Viñetas clásicas */
+    margin-left: 1.5rem;      /* Sangría a la izquierda */
+    font-size: 1rem;          /* Tamaño de fuente uniforme */
+    color: #333333;           /* Color de texto */list-style-type: disc;
+}
+
+/* Especificidad 001 */
+ol {
+    list-style-type: decimal; /* Números */
+    margin-left: 1.5rem;      /* Sangría a la izquierda */
+    font-size: 1rem;
+    color: #333333;
+}
+
+/* Listas anidadas (ul dentro de ul, ol dentro de ol) */
+/* Especificidad 002 */
+ul ul, ol ol, ul ol, ol ul {
+    margin-left: 1rem;        /* Más sangría para diferenciar niveles */
+    font-size: 0.95rem;       /* Fuente ligeramente más pequeña */
+    color: #555555;           /* Color más suave para distinguir niveles */
 }
 
 /* Selector table: estilo básico de tablas */
+/* Especificidad 001*/
 table {
     border-collapse: collapse;
     width: 100%;
     background-color: #ffffff; /* Fondo blanco para contraste */
+    margin-bottom: 1rem;      /* Espacio inferior */
+    font-size: 1rem;          /* Tamaño base de texto */
+
 }
 
 /* Selector th, td: celdas de tablas */
+/* Especificidad 001*/
 th, td {
     border: 1px solid #ccc;
     text-align: left;
@@ -104,7 +153,57 @@ th, td {
 }
 
 /* Selector th: encabezados de tabla */
+/* Especificidad 001*/
 th {
     background-color: #eee; /* Fondo claro para celdas de encabezado */
     font-weight: bold;
+    border:1px solid #ccc; /* Borde para separar celdas */
+}
+/* Selector para toda la lista de definición (dl) */
+/* Especificidad 001 */
+dl {
+    margin-left: 1.5rem;      /* Sangría general */
+    font-size: 1rem;          /* Tamaño base de texto */
+    color: #333333;           /* Color base del texto */
+}
+
+/* Selector para los términos de la definición (dt) */
+/* Especificidad 002 */
+dt {
+    font-weight: bold;        /* Destaca el término */
+    color: #e53935;           /* Color diferente para resaltar */
+    margin-top: 0.5rem;       /* Separación superior */
+}
+/* Filas alternas de la tabla para mejorar legibilidad */
+/* Especificidad 003 */
+tr:nth-child(even) {
+    background-color: #f5f5f5; /* Color gris claro en filas pares */
+}
+/* Selector para las descripciones de la definición (dd) */
+/* Especificidad 002 */
+dd {
+    margin-left: 1rem;        /* Sangría para diferenciar del término */
+    color: #555555;           /* Color más suave */
+    font-size: 0.95rem;       /* Tamaño ligeramente menor */
+}
+/*Especificidad 002: enlaces extornos dentro de aside*/
+aside a[href^="http"] {
+    color: #1e88e5; /* Color azul para enlaces externos */
+    text-decoration: underline;
+}
+
+/* Especificidad 012: hover sobre enlaces externos */
+aside a[href^="http"]:hover {
+    color: #ff5722;              /* Naranja al pasar el ratón */
+    text-decoration: none;       /* Quita el subrayado */
+}
+
+/* Especificidad 012: enlaces visitados */
+aside a[href^="http"]:visited {
+    color: #6a1b9a;              /* Morado si ya se visitó */
+}
+
+/* Especificidad 012: enlace activo */
+aside a[href^="http"]:active {
+    color: #e53935;              /* Rojo al hacer clic */
 }

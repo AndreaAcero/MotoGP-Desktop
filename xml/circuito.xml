@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE circuito SYSTEM "circuito.dtd">
+<circuito>
+    <nombre>Silverstone Circuit</nombre>
+    <longitud unidad="metros">5.901</longitud>
+    <anchura unidad="metros">15</anchura>
+    <fecha>2025-05-25</fecha>
+    <hora>14:00</hora>
+    <num_vueltas>20</num_vueltas>
+    <localidad>Silverstone</localidad>
+    <pais>Reino Unido</pais>
+    <patrocinador>Tissot</patrocinador>
+
+    <referencias>
+        <referencia>https://www.silverstone.co.uk/events/british-grand-prix-motogp</referencia>
+        <referencia>https://www.motogp.com/es/calendar/2025/event/great-britain/98f03e76-5837-4b99-a5a5-57c367c8ba1b?tab=overview</referencia>
+        <referencia>https://www.motogp.com/es/gp-results/2025/gbr/motogp/rac/classification</referencia>
+    </referencias>
+
+
+    <galeria_fotos>
+        <foto>../multimedia/PanoramicaSilverstone.jpg</foto>
+        <foto>../multimedia/rectaMetaSilverstone.jpg</foto>
+        <foto>../multimedia/ImgCircuitoSilverstone.jpg</foto>
+    </galeria_fotos>
+
+    <galeria_videos>
+        <video>../multimedia/CircuitoSilverstone.mp4</video>
+        <video>../multimedia/ResumenCarreraSilverstone.mp4</video>
+    </galeria_videos>
+    <!-- Cambiar  coordenadas por decimal-->
+    <punto_origen longitud="52° 04′ 05″ N" latitud="1° 01′ 24″ W" altitud="145"/>
+
+ <tramos>
+     <!-- Cambiar coordenadas por decimal y cambiar mirar ejercicio bucles tema 1-->
+    <tramo distancia="393,95" longitud="52.070833" latitud="-1.020000" altitud="150" sector="1"/>
+    <tramo distancia="16,3" longitud="52.071111" latitud="-1.019722" altitud="150,03" sector="1"/>
+    <tramo distancia="11,21" longitud="52.071111" latitud="-1.019444" altitud="149,79" sector="1"/>
+    <tramo distancia="9,15" longitud="52.070833" latitud="-1.020000" altitud="149,73" sector="1"/>
+    <tramo distancia="22,96" longitud="52.071111" latitud="-1.019167" altitud="150,05" sector="1"/>
+    <tramo distancia="28,83" longitud="52.071111" latitud="-1.018611" altitud="150,01" sector="1"/>
+    <tramo distancia="103,9" longitud="52.071111" latitud="-1.017222" altitud="151,8" sector="1"/>
+    <tramo distancia="22,89" longitud="52.071111" latitud="-1.016667" altitud="151,83" sector="1"/>
+    <tramo distancia="27,02" longitud="52.071111" latitud="-1.016389" altitud="152,04" sector="1"/>
+    <tramo distancia="30,1" longitud="52.071111" latitud="-1.016111" altitud="152,32" sector="1"/>
+    <tramo distancia="20,12" longitud="52.071389" latitud="-1.015833" altitud="152,45" sector="1"/>
+    <tramo distancia="188,68" longitud="52.072222" latitud="-1.013611" altitud="154,08" sector="1"/>
+    <tramo distancia="18,41" longitud="52.072500" latitud="-1.013333" altitud="154,01" sector="1"/>
+    <tramo distancia="13,3" longitud="52.072500" latitud="-1.013056" altitud="153,88" sector="1"/>
+    <tramo distancia="9,77" longitud="52.072222" latitud="-1.013056" altitud="154,02" sector="1"/>
+    <tramo distancia="10,37" longitud="52.072222" latitud="-1.013056" altitud="154,04" sector="1"/>
+    <tramo distancia="101,7" longitud="52.071389" latitud="-1.012500" altitud="155,02" sector="1"/>
+    <tramo distancia="11,21" longitud="52.071389" latitud="-1.012500" altitud="155,19" sector="1"/>
+    <tramo distancia="14,15" longitud="52.071389" latitud="-1.012222" altitud="155,22" sector="1"/>
+    <tramo distancia="8,42" longitud="52.071389" latitud="-1.012222" altitud="155,48" sector="1"/>
+    <tramo distancia="12,84" longitud="52.071389" latitud="-1.011944" altitud="155,55" sector="1"/>
+    <tramo distancia="16,62" longitud="52.071389" latitud="-1.011667" altitud="155,41" sector="1"/>
+    <tramo distancia="32,2" longitud="52.071667" latitud="-1.011667" altitud="155,43" sector="1"/>
+    <tramo distancia="51,32" longitud="52.072222" latitud="-1.011389" altitud="155,58" sector="1"/>
+    <tramo distancia="44,94" longitud="52.072500" latitud="-1.011389" altitud="155,5" sector="1"/>
+    <tramo distancia="21,06" longitud="52.072778" latitud="-1.011389" altitud="154,71" sector="1"/>
+    <tramo distancia="22" longitud="52.072778" latitud="-1.011389" altitud="154,7" sector="1"/>
+    <tramo distancia="16,84" longitud="52.073056" latitud="-1.011389" altitud="154,26" sector="1"/>
+    <tramo distancia="590,91" longitud="52.076667" latitud="-1.018056" altitud="152,71" sector="1"/>
+    <tramo distancia="29,32" longitud="52.076944" latitud="-1.018333" altitud="152,45" sector="1"/>
+    <tramo distancia="24,15" longitud="52.076944" latitud="-1.018611" altitud="151,9" sector="1"/>
+    <tramo distancia="20,19" longitud="52.076944" latitud="-1.018611" altitud="151,9" sector="1"/>
+    <tramo distancia="20,19" longitud="52.076944" latitud="-1.018889" altitud="151,37" sector="1"/>
+    <tramo distancia="24,79" longitud="52.076944" latitud="-1.019444" altitud="151,29" sector="1"/>
+    <tramo distancia="15,86" longitud="52.076944" latitud="-1.019444" altitud="151,1" sector="1"/>
+    <tramo distancia="16,3" longitud="52.076944" latitud="-1.019722" altitud="151,05" sector="1"/>
+    <tramo distancia="18,61" longitud="52.076944" latitud="-1.020000" altitud="151,15" sector="1"/>
+    <tramo distancia="65,45" longitud="52.076111" latitud="-1.020000" altitud="152,23" sector="1"/>
+    <tramo distancia="18,2" longitud="52.076111" latitud="-1.020000" altitud="152,25" sector="1"/>
+    <tramo distancia="14,77" longitud="52.075833" latitud="-1.020278" altitud="152,57" sector="1"/>
+    <tramo distancia="15,29" longitud="52.075833" latitud="-1.020556" altitud="152,39" sector="1"/>
+    <tramo distancia="13,63" longitud="52.075556" latitud="-1.020556" altitud="152,41" sector="1"/>
+    <tramo distancia="15,65" longitud="52.075556" latitud="-1.020833" altitud="152,31" sector="1"/>
+    <tramo distancia="17,5" longitud="52.075833" latitud="-1.021111" altitud="152,26" sector="1"/>
+    <tramo distancia="17,08" longitud="52.075833" latitud="-1.021389" altitud="152,4" sector="1"/>
+    <tramo distancia="12,88" longitud="52.075833" latitud="-1.021389" altitud="152,59" sector="1"/>
+    <tramo distancia="18,93" longitud="52.076111" latitud="-1.021667" altitud="152,67" sector="1"/>
+    <tramo distancia="15,57" longitud="52.076111" latitud="-1.021667" altitud="152,44" sector="1"/>
+    <tramo distancia="18,57" longitud="52.076389" latitud="-1.021389" altitud="152,15" sector="1"/>
+    <tramo distancia="133,68" longitud="52.077500" latitud="-1.020556" altitud="150,34" sector="1"/>
+    <tramo distancia="20,79" longitud="52.077778" latitud="-1.020278" altitud="150,52" sector="1"/>
+    <tramo distancia="27,57" longitud="52.077778" latitud="-1.020000" altitud="150,75" sector="1"/>
+    <tramo distancia="28,16" longitud="52.078056" latitud="-1.019722" altitud="150,94" sector="1"/>
+    <tramo distancia="24,44" longitud="52.078056" latitud="-1.019444" altitud="151,11" sector="1"/>
+    <tramo distancia="29,25" longitud="52.078333" latitud="-1.019167" altitud="150,82" sector="1"/>
+    <tramo distancia="23,38" longitud="52.078333" latitud="-1.018889" altitud="150,81" sector="1"/>
+    <tramo distancia="18,48" longitud="52.078333" latitud="-1.018611" altitud="150,94" sector="1"/>
+    <tramo distancia="19,08" longitud="52.078333" latitud="-1.018333" altitud="151,02" sector="1"/>
+    <tramo distancia="18,61" longitud="52.078611" latitud="-1.018056" altitud="151,13" sector="1"/>
+    <tramo distancia="19,03" longitud="52.078611" latitud="-1.017778" altitud="151,1" sector="1"/>
+    <tramo distancia="387,79" longitud="52.078889" latitud="-1.012222" altitud="153,52" sector="1"/>
+    <tramo distancia="48,57" longitud="52.078611" latitud="-1.011389" altitud="153,57" sector="1"/>
+    <tramo distancia="51,84" longitud="52.078333" latitud="-1.011111" altitud="153,77" sector="1"/>
+    <tramo distancia="457,36" longitud="52.074167" latitud="-1.010000" altitud="154,39" sector="1"/>
+    <tramo distancia="48,56" longitud="52.073889" latitud="-1.009722" altitud="153,8" sector="1"/>
+    <tramo distancia="44,59" longitud="52.073333" latitud="-1.009444" altitud="153,17" sector="1"/>
+    <tramo distancia="25,66" longitud="52.073333" latitud="-1.009444" altitud="153,87" sector="1"/>
+    <tramo distancia="31,36" longitud="52.073056" latitud="-1.009444" altitud="154,41" sector="1"/>
+    <tramo distancia="73,97" longitud="52.072222" latitud="-1.010000" altitud="155,51" sector="1"/>
+    <tramo distancia="39,12" longitud="52.071944" latitud="-1.010000" altitud="155,01" sector="1"/>
+    <tramo distancia="44,72" longitud="52.071667" latitud="-1.009722" altitud="153,87" sector="1"/>
+    <tramo distancia="62,19" longitud="52.071111" latitud="-1.009167" altitud="153,58" sector="1"/>
+    <tramo distancia="52,28" longitud="52.070556" latitud="-1.009167" altitud="153,09" sector="1"/>
+    <tramo distancia="46,45" longitud="52.070278" latitud="-1.009722" altitud="152,27" sector="1"/>
+    <tramo distancia="109,34" longitud="52.069722" latitud="-1.010833" altitud="151,2" sector="1"/>
+    <tramo distancia="28,73" longitud="52.069722" latitud="-1.011111" altitud="151,01" sector="1"/>
+    <tramo distancia="641,62" longitud="52.064444" latitud="-1.015556" altitud="147,95" sector="1"/>
+    <tramo distancia="99,9" longitud="52.063889" latitud="-1.016389" altitud="150,24" sector="1"/>
+    <tramo distancia="38,96" longitud="52.063611" latitud="-1.016944" altitud="150,87" sector="1"/>
+    <tramo distancia="45,25" longitud="52.063333" latitud="-1.017500" altitud="151,34" sector="1"/>
+    <tramo distancia="76,2" longitud="52.063611" latitud="-1.018611" altitud="151,38" sector="1"/>
+    <tramo distancia="67,9" longitud="52.064167" latitud="-1.019167" altitud="150,44" sector="1"/>
+    <tramo distancia="130,37" longitud="52.065000" latitud="-1.020000" altitud="146,58" sector="1"/>
+    <tramo distancia="182,52" longitud="52.066389" latitud="-1.021944" altitud="145,85" sector="1"/>
+    <tramo distancia="13,85" longitud="52.066389" latitud="-1.021944" altitud="145,77" sector="1"/>
+    <tramo distancia="13,52" longitud="52.066389" latitud="-1.021944" altitud="145,77" sector="1"/>
+    <tramo distancia="46,36" longitud="52.066111" latitud="-1.022778" altitud="146,22" sector="1"/>
+    <tramo distancia="18,23" longitud="52.066111" latitud="-1.023056" altitud="146,57" sector="1"/>
+    <tramo distancia="20,6" longitud="52.066111" latitud="-1.023333" altitud="146,78" sector="1"/>
+    <tramo distancia="62,92" longitud="52.066667" latitud="-1.023889" altitud="146,5" sector="1"/>
+    <tramo distancia="62,74" longitud="52.067222" latitud="-1.024167" altitud="146,53" sector="1"/>
+    <tramo distancia="34,24" longitud="52.067500" latitud="-1.024167" altitud="144,84" sector="1"/>
+    <tramo distancia="18,34" longitud="52.067500" latitud="-1.024167" altitud="143,86" sector="1"/>
+    <tramo distancia="81,64" longitud="52.068056" latitud="-1.023333" altitud="144,6" sector="1"/>
+</tramos>
+
+    <vencedor>Marco Bezzecchi</vencedor>
+    <!-- posicion como atributos-->
+    <clasificacion>
+        <primer_lugar>Marc Marquez</primer_lugar>
+        <segundo_lugar>Alex Marquez</segundo_lugar>
+        <tercero_lugar>Francesco Bagnaia</tercero_lugar>
+    </clasificacion>
+
+</circuito>

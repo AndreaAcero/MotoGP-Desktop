@@ -1,0 +1,58 @@
+<!ELEMENT circuito (
+    nombre,
+    longitud,
+    anchura,
+    fecha,
+    hora,
+    num_vueltas,
+    localidad,
+    pais,
+    patrocinador,
+    referencias,
+    galeria_fotos,
+    galeria_videos,
+    punto_origen,
+    tramos,
+    vencedor,
+    clasificacion
+)>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT longitud (#PCDATA)>
+<!ATTLIST longitud unidad CDATA #REQUIRED>
+<!ELEMENT anchura (#PCDATA)>
+<!ATTLIST anchura unidad CDATA #REQUIRED>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT hora (#PCDATA)>
+<!ELEMENT num_vueltas (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ELEMENT patrocinador (#PCDATA)>
+
+<!ELEMENT referencias (referencia+)>
+<!ELEMENT referencia (#PCDATA)>
+
+<!ELEMENT galeria_fotos (foto+)>
+<!ELEMENT foto (#PCDATA)>
+
+<!ELEMENT galeria_videos (video+)>
+<!ELEMENT video (#PCDATA)>
+
+<!ELEMENT punto_origen EMPTY>
+<!ATTLIST punto_origen longitud CDATA #REQUIRED
+                        latitud CDATA #REQUIRED
+                        altitud CDATA #REQUIRED>
+
+<!ELEMENT tramos (tramo+)>
+<!ELEMENT tramo EMPTY>
+<!ATTLIST tramo distancia CDATA #REQUIRED
+                longitud CDATA #REQUIRED
+                latitud CDATA #REQUIRED
+                altitud CDATA #REQUIRED
+                sector CDATA #REQUIRED>
+
+<!ELEMENT vencedor (#PCDATA)>
+<!ELEMENT clasificacion (primer_lugar, segundo_lugar, tercero_lugar)>
+<!ELEMENT primer_lugar (#PCDATA)>
+<!ELEMENT segundo_lugar (#PCDATA)>
+<!ELEMENT tercero_lugar (#PCDATA)>

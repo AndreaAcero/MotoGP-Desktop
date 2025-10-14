@@ -16,7 +16,7 @@ body {
     font-size: 16px; /* Tamaño base */
     line-height: 1.5; /* Mejora legibilidad */
     background-color: #f5f5f5; /* Color de fondo de la página */
-    color: #333333; /* Color de texto principal */
+    color: #000; /* Color de texto principal */
 }
 
 /* Selector header: color de fondo del encabezado */
@@ -47,7 +47,7 @@ header + p {
 
 /* Especificidad 003*/
 header + p strong {
-  color: red;      /* destaca la página actual */
+  color: #e53935;      /* destaca la página actual */
   font-weight: bold;
   /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 
@@ -96,7 +96,7 @@ nav a {
 }
 /* Especificidad 011 (.active = 010 + a = 001) */
 nav a.active {
-  color: red;            /* cambiar color de texto */
+  color: #059BFF;            /* cambiar color de texto */
   /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 }
 
@@ -104,7 +104,7 @@ nav a.active {
 /* Especificidad 012*/
 nav a:hover {
     text-decoration: underline;
-    color: #ffeb3b; /* Color amarillo para contraste en hover */
+    color: #FFED85; /* Color amarillo para contraste en hover */
     /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 }
 

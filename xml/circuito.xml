@@ -28,11 +28,10 @@
         <video>../multimedia/CircuitoSilverstone.mp4</video>
         <video>../multimedia/ResumenCarreraSilverstone.mp4</video>
     </galeria_videos>
-    <!-- Cambiar  coordenadas por decimal-->
-    <punto_origen longitud="52° 04′ 05″ N" latitud="1° 01′ 24″ W" altitud="145"/>
+
+    <punto_origen longitud="52.068056" latitud="-1.023333" altitud="145"/>
 
  <tramos>
-     <!-- Cambiar coordenadas por decimal y cambiar mirar ejercicio bucles tema 1-->
     <tramo distancia="393,95" longitud="52.070833" latitud="-1.020000" altitud="150" sector="1"/>
     <tramo distancia="16,3" longitud="52.071111" latitud="-1.019722" altitud="150,03" sector="1"/>
     <tramo distancia="11,21" longitud="52.071111" latitud="-1.019444" altitud="149,79" sector="1"/>

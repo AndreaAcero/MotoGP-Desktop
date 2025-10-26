@@ -230,3 +230,11 @@ aside a[href^="http"]:active {
     color: #e53935;              /* Rojo al hacer clic */
     /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 }
+
+/* Imágenes y vídeos responsivos para todo el HTML */
+img, video {
+    max-width: 100%;   /* Nunca exceder el ancho del contenedor */
+    height: auto;      /* Mantener proporción */
+    display: block;    /* Evita espacios extra debajo de la imagen/video */
+    margin-bottom: 1rem; /* Espacio entre elementos */
+}

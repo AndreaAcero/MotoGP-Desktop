@@ -44,14 +44,24 @@
                         altitud CDATA #REQUIRED>
 
 <!ELEMENT tramos (tramo+)>
-<!ELEMENT tramo EMPTY>
-<!ATTLIST tramo distancia CDATA #REQUIRED
-                longitud CDATA #REQUIRED
-                latitud CDATA #REQUIRED
-                altitud CDATA #REQUIRED
-                sector CDATA #REQUIRED>
+
+<!ELEMENT tramo (distancia_tramo, longitud_tramo, latitud_tramo, altitud_tramo)>
+<!ATTLIST tramo sector CDATA #REQUIRED>
+
+<!ELEMENT distancia_tramo (#PCDATA)>
+<!ATTLIST distancia_tramo unidades CDATA #REQUIRED>
+
+<!ELEMENT longitud_tramo (#PCDATA)>
+<!ATTLIST longitud_tramo unidades CDATA #REQUIRED>
+
+<!ELEMENT latitud_tramo (#PCDATA)>
+<!ATTLIST latitud_tramo unidades CDATA #REQUIRED>
+
+<!ELEMENT altitud_tramo (#PCDATA)>
+<!ATTLIST altitud_tramo unidades CDATA #REQUIRED>
 
 <!ELEMENT vencedor (#PCDATA)>
+
 <!ELEMENT clasificacion (primer_lugar, segundo_lugar, tercero_lugar)>
 <!ELEMENT primer_lugar (#PCDATA)>
 <!ELEMENT segundo_lugar (#PCDATA)>

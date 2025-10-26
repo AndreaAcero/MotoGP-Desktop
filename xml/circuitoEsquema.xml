@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<circuito xmlns="http://www.uniovi.es"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.uniovi.es circuito.xsd">
+
+          <nombre>"Silverstone Circuit"</nombre>
+   
+    <longitud unidades="metros">5.901</longitud>
+    <anchura unidades="metros">15</anchura>
+
+
+    <fecha>2025-05-25</fecha>
+    <hora>14:00:00</hora>
+    <numVueltas>20</numVueltas>
+    <localidad>Silverstone</localidad>
+    <pais>Reino Unido</pais>
+    <patrocinador>Tissot</patrocinador>
+
+    <referencias>
+        <referencia>https://www.silverstone.co.uk/events/british-grand-prix-motogp</referencia>
+        <referencia>https://www.motogp.com/es/calendar/2025/event/great-britain/98f03e76-5837-4b99-a5a5-57c367c8ba1b?tab=overview</referencia>
+        <referencia>https://www.motogp.com/es/gp-results/2025/gbr/motogp/rac/classification</referencia>
+    </referencias>
+
+
+    <galeriaFotos>
+        <foto>../multimedia/PanoramicaSilverstone.jpg</foto>
+        <foto>../multimedia/rectaMetaSilverstone.jpg</foto>
+        <foto>../multimedia/ImgCircuitoSilverstone.jpg</foto>
+    </galeriaFotos>
+
+    <galeriaVideos>
+        <video>../multimedia/CircuitoSilverstone.mp4</video>
+        <video>../multimedia/ResumenCarreraSilverstone.mp4</video>
+    </galeriaVideos>
+
+    <puntoOrigen>
+        <longitud>-1.023496004592915</longitud>
+        <latitud>52.0682791305414</latitud>
+        <altitud>144.6525967819629</altitud>
+    </puntoOrigen>
+
+<tramos> 
+  <tramo sector="1">
+    <distancia unidades="m">410.06</distancia>
+    <longitud unidades="°">-1.019830128447543</longitud>
+    <latitud unidades="°">52.07119829430768</latitud>
+    <altitud unidades="m">150.1671797303125</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">74.27</distancia>
+    <longitud unidades="°">-1.01876972201569</longitud>
+    <latitud unidades="°">52.07134415664211</latitud>
+    <altitud unidades="m">149.9952590991023</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">103.59</distancia>
+    <longitud unidades="°">-1.017269282525106</longitud>
+    <latitud unidades="°">52.07121244518698</latitud>
+    <altitud unidades="m">151.9052034266277</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">49.71</distancia>
+    <longitud unidades="°">-1.016542463552719</longitud>
+    <latitud unidades="°">52.07122825932527</latitud>
+    <altitud unidades="m">152.0305905851272</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">49.80</distancia>
+    <longitud unidades="°">-1.015870069147684</longitud>
+    <latitud unidades="°">52.07140083848225</latitud>
+    <altitud unidades="m">152.4751135878318</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">188.62</distancia>
+    <longitud unidades="°">-1.013718317150093</longitud>
+    <latitud unidades="°">52.07246296568587</latitud>
+    <altitud unidades="m">154.0310944885692</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">30.54</distancia>
+    <longitud unidades="°">-1.013287107079902</longitud>
+    <latitud unidades="°">52.0725350507166</latitud>
+    <altitud unidades="m">153.8102213217404</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">19.62</distancia>
+    <longitud unidades="°">-1.013071317516454</longitud>
+    <latitud unidades="°">52.07241873087544</latitud>
+    <altitud unidades="m">154.1562515771411</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">101.57</distancia>
+    <longitud unidades="°">-1.012623624626834</longitud>
+    <latitud unidades="°">52.07154769099485</latitud>
+    <altitud unidades="m">155.0580407989825</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">24.01</distancia>
+    <longitud unidades="°">-1.012347674521078</longitud>
+    <latitud unidades="°">52.07141402193572</latitud>
+    <altitud unidades="m">155.2689216279713</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">29.14</distancia>
+    <longitud unidades="°">-1.011958212109717</longitud>
+    <latitud unidades="°">52.0715205340105</latitud>
+    <altitud unidades="m">155.5631005705005</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">90.88</distancia>
+    <longitud unidades="°">-1.011549753559144</longitud>
+    <latitud unidades="°">52.07229832321701</latitud>
+    <altitud unidades="m">155.7046091314662</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">75.38</distancia>
+    <longitud unidades="°">-1.011447246281119</longitud>
+    <latitud unidades="°">52.07297332250932</latitud>
+    <altitud unidades="m">154.732692690435</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">14.32</distancia>
+    <longitud unidades="°">-1.01151071943674</longitud>
+    <latitud unidades="°">52.07309605066666</latitud>
+    <altitud unidades="m">154.7200446458884</altitud>
+  </tramo>
+  <tramo sector="1">
+    <distancia unidades="m">18.21</distancia>
+    <longitud unidades="°">-1.011684501782754</longitud>
+    <latitud unidades="°">52.07322013638694</latitud>
+    <altitud unidades="m">154.5194737588663</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">629.23</distancia>
+    <longitud unidades="°">-1.018526758811774</longitud>
+    <latitud unidades="°">52.07700642564061</latitud>
+    <altitud unidades="m">152.4449821272436</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">60.46</distancia>
+    <longitud unidades="°">-1.01938555505885</longitud>
+    <latitud unidades="°">52.07713712517122</latitud>
+    <altitud unidades="m">151.4207045637658</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">52.39</distancia>
+    <longitud unidades="°">-1.020024408222121</longitud>
+    <latitud unidades="°">52.07687674321814</latitud>
+    <altitud unidades="m">151.3353831040847</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">82.92</distancia>
+    <longitud unidades="°">-1.020197187696139</longitud>
+    <latitud unidades="°">52.0761386587228</latitud>
+    <altitud unidades="m">152.4751667361721</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">51.48</distancia>
+    <longitud unidades="°">-1.020740138713085</longitud>
+    <latitud unidades="°">52.07581775964901</latitud>
+    <altitud unidades="m">152.5069987993567</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">61.57</distancia>
+    <longitud unidades="°">-1.021570572343397</longitud>
+    <latitud unidades="°">52.07603255451268</latitud>
+    <altitud unidades="m">152.4013493429758</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">57.46</distancia>
+    <longitud unidades="°">-1.021586968555575</longitud>
+    <latitud unidades="°">52.07654917724236</latitud>
+    <altitud unidades="m">152.1458959009825</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">168.77</distancia>
+    <longitud unidades="°">-1.020384695049413</longitud>
+    <latitud unidades="°">52.07787494022628</latitud>
+    <altitud unidades="m">150.537850685179</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">65.58</distancia>
+    <longitud unidades="°">-1.019688622588463</longitud>
+    <latitud unidades="°">52.07828098103752</latitud>
+    <altitud unidades="m">151.1402998022992</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">74.99</distancia>
+    <longitud unidades="°">-1.018703917082977</longitud>
+    <latitud unidades="°">52.07857856772953</latitud>
+    <altitud unidades="m">151.1489598964246</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">55.44</distancia>
+    <longitud unidades="°">-1.017902554314394</longitud>
+    <latitud unidades="°">52.07865638678362</latitud>
+    <altitud unidades="m">151.2426733177737</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">386.94</distancia>
+    <longitud unidades="°">-1.012261269300879</longitud>
+    <latitud unidades="°">52.07895531909693</latitud>
+    <altitud unidades="m">153.7977281076318</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">48.32</distancia>
+    <longitud unidades="°">-1.011623852600038</longitud>
+    <latitud unidades="°">52.07876721887159</latitud>
+    <altitud unidades="m">153.644091023256</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">52.31</distancia>
+    <longitud unidades="°">-1.011136201090794</longitud>
+    <latitud unidades="°">52.07840466015906</latitud>
+    <altitud unidades="m">153.7827890881021</altitud>
+  </tramo>
+
+  <tramo sector="2">
+    <distancia unidades="m">477.05</distancia>
+    <longitud unidades="°">-1.010185091176228</longitud>
+    <latitud unidades="°">52.07433866550169</latitud>
+    <altitud unidades="m">154.6128979185694</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">48.49</distancia>
+    <longitud unidades="°">-1.009923917116049</longitud>
+    <latitud unidades="°">52.07393319498046</latitud>
+    <altitud unidades="m">153.7976423841828</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">53.70</distancia>
+    <longitud unidades="°">-1.009541204641218</longitud>
+    <latitud unidades="°">52.07351137375181</latitud>
+    <altitud unidades="m">153.2879930066213</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">49.17</distancia>
+    <longitud unidades="°">-1.009664195999805</longitud>
+    <latitud unidades="°">52.07307569210331</latitud>
+    <altitud unidades="m">154.3747007736468</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">73.76</distancia>
+    <longitud unidades="°">-1.010044679674073</longitud>
+    <latitud unidades="°">52.07245498112735</latitud>
+    <altitud unidades="m">155.6729751713994</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">39.26</distancia>
+    <longitud unidades="°">-1.010123271757664</longitud>
+    <latitud unidades="°">52.07210526191563</latitud>
+    <altitud unidades="m">154.9372739840069</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">44.11</distancia>
+    <longitud unidades="°">-1.009950051286297</longitud>
+    <latitud unidades="°">52.07172309235361</latitud>
+    <altitud unidades="m">153.7975205291991</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">62.17</distancia>
+    <longitud unidades="°">-1.009403245887387</longitud>
+    <latitud unidades="°">52.07127633805737</latitud>
+    <altitud unidades="m">153.4232848584194</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">52.17</distancia>
+    <longitud unidades="°">-1.009347142648842</longitud>
+    <latitud unidades="°">52.07080839531294</latitud>
+    <altitud unidades="m">152.8984210646512</altitud>
+  </tramo>
+  <tramo sector="2">
+    <distancia unidades="m">46.64</distancia>
+    <longitud unidades="°">-1.009740575631715</longitud>
+    <latitud unidades="°">52.07046566252444</latitud>
+    <altitud unidades="m">152.2778104084623</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">113.70</distancia>
+    <longitud unidades="°">-1.011120898125799</longitud>
+    <latitud unidades="°">52.06989495123252</latitud>
+    <altitud unidades="m">151.1148980757517</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">769.42</distancia>
+    <longitud unidades="°">-1.016666132293746</longitud>
+    <latitud unidades="°">52.06387331321953</latitud>
+    <altitud unidades="m">150.2291090266673</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">85.94</distancia>
+    <longitud unidades="°">-1.017796785335828</longitud>
+    <latitud unidades="°">52.06353535166716</latitud>
+    <altitud unidades="m">151.2795431942978</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">72.48</distancia>
+    <longitud unidades="°">-1.018759201603788</longitud>
+    <latitud unidades="°">52.06380885812961</latitud>
+    <altitud unidades="m">151.3464427347261</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">63.63</distancia>
+    <longitud unidades="°">-1.0191917669256</longitud>
+    <latitud unidades="°">52.06431556611959</latitud>
+    <altitud unidades="m">150.646972564397</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">134.16</distancia>
+    <longitud unidades="°">-1.020303843253135</longitud>
+    <latitud unidades="°">52.06530970113955</latitud>
+    <altitud unidades="m">146.7905725924345</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">173.03</distancia>
+    <longitud unidades="°">-1.021983212003847</longitud>
+    <latitud unidades="°">52.06647401418978</latitud>
+    <altitud unidades="m">145.9233095538468</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">13.60</distancia>
+    <longitud unidades="°">-1.02213218465768</longitud>
+    <latitud unidades="°">52.06655504077271</latitud>
+    <altitud unidades="m">145.6810582515434</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">13.50</distancia>
+    <longitud unidades="°">-1.022328025601322</longitud>
+    <latitud unidades="°">52.06653929722122</latitud>
+    <altitud unidades="m">145.6863433326911</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">48.59</distancia>
+    <longitud unidades="°">-1.022861912336144</longitud>
+    <latitud unidades="°">52.0662508082995</latitud>
+    <altitud unidades="m">146.4274461074295</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">18.04</distancia>
+    <longitud unidades="°">-1.023118335806911</longitud>
+    <latitud unidades="°">52.06621242314149</latitud>
+    <altitud unidades="m">146.6611267369475</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">20.29</distancia>
+    <longitud unidades="°">-1.023361653382648</longitud>
+    <latitud unidades="°">52.06631695751169</latitud>
+    <altitud unidades="m">146.8167683540549</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">61.83</distancia>
+    <longitud unidades="°">-1.023953422691803</longitud>
+    <latitud unidades="°">52.06673751155101</latitud>
+    <altitud unidades="m">146.578509220654</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">62.51</distancia>
+    <longitud unidades="°">-1.024317525266834</longitud>
+    <latitud unidades="°">52.06725322390515</latitud>
+    <altitud unidades="m">145.6213628434503</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">37.08</distancia>
+    <longitud unidades="°">-1.024313188537048</longitud>
+    <latitud unidades="°">52.0675866617426</latitud>
+    <altitud unidades="m">144.5634221807799</altitud>
+  </tramo>
+  <tramo sector="3">
+    <distancia unidades="m">102.5</distancia>
+    <longitud unidades="°">-1.023496004592915</longitud>
+    <latitud unidades="°">52.0682791305414</latitud>
+    <altitud unidades="m">144.6525967819629</altitud>
+  </tramo>
+</tramos>
+
+
+
+<vencedor>
+    <nombre>Marco Bezzecchi</nombre>
+    <tiempo>PT38M16.037S</tiempo> 
+</vencedor>
+
+<clasificacionMundial>
+    <piloto posicion="1">
+        <nombre>Marc Marquez</nombre>
+        <puntos>251</puntos>
+    </piloto>
+    <piloto posicion="2">
+        <nombre>Alex Marquez</nombre>
+        <puntos>198</puntos>
+    </piloto>
+    <piloto posicion="3">
+        <nombre>Francesco Bagnaia</nombre>
+        <puntos>172</puntos>
+    </piloto>
+</clasificacionMundial>
+</circuito>

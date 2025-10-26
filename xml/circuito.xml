@@ -31,101 +31,340 @@
 
     <punto_origen longitud="52.068056" latitud="-1.023333" altitud="145"/>
 
- <tramos>
-    <tramo distancia="393,95" longitud="52.070833" latitud="-1.020000" altitud="150" sector="1"/>
-    <tramo distancia="16,3" longitud="52.071111" latitud="-1.019722" altitud="150,03" sector="1"/>
-    <tramo distancia="11,21" longitud="52.071111" latitud="-1.019444" altitud="149,79" sector="1"/>
-    <tramo distancia="9,15" longitud="52.070833" latitud="-1.020000" altitud="149,73" sector="1"/>
-    <tramo distancia="22,96" longitud="52.071111" latitud="-1.019167" altitud="150,05" sector="1"/>
-    <tramo distancia="28,83" longitud="52.071111" latitud="-1.018611" altitud="150,01" sector="1"/>
-    <tramo distancia="103,9" longitud="52.071111" latitud="-1.017222" altitud="151,8" sector="1"/>
-    <tramo distancia="22,89" longitud="52.071111" latitud="-1.016667" altitud="151,83" sector="1"/>
-    <tramo distancia="27,02" longitud="52.071111" latitud="-1.016389" altitud="152,04" sector="1"/>
-    <tramo distancia="30,1" longitud="52.071111" latitud="-1.016111" altitud="152,32" sector="1"/>
-    <tramo distancia="20,12" longitud="52.071389" latitud="-1.015833" altitud="152,45" sector="1"/>
-    <tramo distancia="188,68" longitud="52.072222" latitud="-1.013611" altitud="154,08" sector="1"/>
-    <tramo distancia="18,41" longitud="52.072500" latitud="-1.013333" altitud="154,01" sector="1"/>
-    <tramo distancia="13,3" longitud="52.072500" latitud="-1.013056" altitud="153,88" sector="1"/>
-    <tramo distancia="9,77" longitud="52.072222" latitud="-1.013056" altitud="154,02" sector="1"/>
-    <tramo distancia="10,37" longitud="52.072222" latitud="-1.013056" altitud="154,04" sector="1"/>
-    <tramo distancia="101,7" longitud="52.071389" latitud="-1.012500" altitud="155,02" sector="1"/>
-    <tramo distancia="11,21" longitud="52.071389" latitud="-1.012500" altitud="155,19" sector="1"/>
-    <tramo distancia="14,15" longitud="52.071389" latitud="-1.012222" altitud="155,22" sector="1"/>
-    <tramo distancia="8,42" longitud="52.071389" latitud="-1.012222" altitud="155,48" sector="1"/>
-    <tramo distancia="12,84" longitud="52.071389" latitud="-1.011944" altitud="155,55" sector="1"/>
-    <tramo distancia="16,62" longitud="52.071389" latitud="-1.011667" altitud="155,41" sector="1"/>
-    <tramo distancia="32,2" longitud="52.071667" latitud="-1.011667" altitud="155,43" sector="1"/>
-    <tramo distancia="51,32" longitud="52.072222" latitud="-1.011389" altitud="155,58" sector="1"/>
-    <tramo distancia="44,94" longitud="52.072500" latitud="-1.011389" altitud="155,5" sector="1"/>
-    <tramo distancia="21,06" longitud="52.072778" latitud="-1.011389" altitud="154,71" sector="1"/>
-    <tramo distancia="22" longitud="52.072778" latitud="-1.011389" altitud="154,7" sector="1"/>
-    <tramo distancia="16,84" longitud="52.073056" latitud="-1.011389" altitud="154,26" sector="1"/>
-    <tramo distancia="590,91" longitud="52.076667" latitud="-1.018056" altitud="152,71" sector="1"/>
-    <tramo distancia="29,32" longitud="52.076944" latitud="-1.018333" altitud="152,45" sector="1"/>
-    <tramo distancia="24,15" longitud="52.076944" latitud="-1.018611" altitud="151,9" sector="1"/>
-    <tramo distancia="20,19" longitud="52.076944" latitud="-1.018611" altitud="151,9" sector="1"/>
-    <tramo distancia="20,19" longitud="52.076944" latitud="-1.018889" altitud="151,37" sector="1"/>
-    <tramo distancia="24,79" longitud="52.076944" latitud="-1.019444" altitud="151,29" sector="1"/>
-    <tramo distancia="15,86" longitud="52.076944" latitud="-1.019444" altitud="151,1" sector="1"/>
-    <tramo distancia="16,3" longitud="52.076944" latitud="-1.019722" altitud="151,05" sector="1"/>
-    <tramo distancia="18,61" longitud="52.076944" latitud="-1.020000" altitud="151,15" sector="1"/>
-    <tramo distancia="65,45" longitud="52.076111" latitud="-1.020000" altitud="152,23" sector="1"/>
-    <tramo distancia="18,2" longitud="52.076111" latitud="-1.020000" altitud="152,25" sector="1"/>
-    <tramo distancia="14,77" longitud="52.075833" latitud="-1.020278" altitud="152,57" sector="1"/>
-    <tramo distancia="15,29" longitud="52.075833" latitud="-1.020556" altitud="152,39" sector="1"/>
-    <tramo distancia="13,63" longitud="52.075556" latitud="-1.020556" altitud="152,41" sector="1"/>
-    <tramo distancia="15,65" longitud="52.075556" latitud="-1.020833" altitud="152,31" sector="1"/>
-    <tramo distancia="17,5" longitud="52.075833" latitud="-1.021111" altitud="152,26" sector="1"/>
-    <tramo distancia="17,08" longitud="52.075833" latitud="-1.021389" altitud="152,4" sector="1"/>
-    <tramo distancia="12,88" longitud="52.075833" latitud="-1.021389" altitud="152,59" sector="1"/>
-    <tramo distancia="18,93" longitud="52.076111" latitud="-1.021667" altitud="152,67" sector="1"/>
-    <tramo distancia="15,57" longitud="52.076111" latitud="-1.021667" altitud="152,44" sector="1"/>
-    <tramo distancia="18,57" longitud="52.076389" latitud="-1.021389" altitud="152,15" sector="1"/>
-    <tramo distancia="133,68" longitud="52.077500" latitud="-1.020556" altitud="150,34" sector="1"/>
-    <tramo distancia="20,79" longitud="52.077778" latitud="-1.020278" altitud="150,52" sector="1"/>
-    <tramo distancia="27,57" longitud="52.077778" latitud="-1.020000" altitud="150,75" sector="1"/>
-    <tramo distancia="28,16" longitud="52.078056" latitud="-1.019722" altitud="150,94" sector="1"/>
-    <tramo distancia="24,44" longitud="52.078056" latitud="-1.019444" altitud="151,11" sector="1"/>
-    <tramo distancia="29,25" longitud="52.078333" latitud="-1.019167" altitud="150,82" sector="1"/>
-    <tramo distancia="23,38" longitud="52.078333" latitud="-1.018889" altitud="150,81" sector="1"/>
-    <tramo distancia="18,48" longitud="52.078333" latitud="-1.018611" altitud="150,94" sector="1"/>
-    <tramo distancia="19,08" longitud="52.078333" latitud="-1.018333" altitud="151,02" sector="1"/>
-    <tramo distancia="18,61" longitud="52.078611" latitud="-1.018056" altitud="151,13" sector="1"/>
-    <tramo distancia="19,03" longitud="52.078611" latitud="-1.017778" altitud="151,1" sector="1"/>
-    <tramo distancia="387,79" longitud="52.078889" latitud="-1.012222" altitud="153,52" sector="1"/>
-    <tramo distancia="48,57" longitud="52.078611" latitud="-1.011389" altitud="153,57" sector="1"/>
-    <tramo distancia="51,84" longitud="52.078333" latitud="-1.011111" altitud="153,77" sector="1"/>
-    <tramo distancia="457,36" longitud="52.074167" latitud="-1.010000" altitud="154,39" sector="1"/>
-    <tramo distancia="48,56" longitud="52.073889" latitud="-1.009722" altitud="153,8" sector="1"/>
-    <tramo distancia="44,59" longitud="52.073333" latitud="-1.009444" altitud="153,17" sector="1"/>
-    <tramo distancia="25,66" longitud="52.073333" latitud="-1.009444" altitud="153,87" sector="1"/>
-    <tramo distancia="31,36" longitud="52.073056" latitud="-1.009444" altitud="154,41" sector="1"/>
-    <tramo distancia="73,97" longitud="52.072222" latitud="-1.010000" altitud="155,51" sector="1"/>
-    <tramo distancia="39,12" longitud="52.071944" latitud="-1.010000" altitud="155,01" sector="1"/>
-    <tramo distancia="44,72" longitud="52.071667" latitud="-1.009722" altitud="153,87" sector="1"/>
-    <tramo distancia="62,19" longitud="52.071111" latitud="-1.009167" altitud="153,58" sector="1"/>
-    <tramo distancia="52,28" longitud="52.070556" latitud="-1.009167" altitud="153,09" sector="1"/>
-    <tramo distancia="46,45" longitud="52.070278" latitud="-1.009722" altitud="152,27" sector="1"/>
-    <tramo distancia="109,34" longitud="52.069722" latitud="-1.010833" altitud="151,2" sector="1"/>
-    <tramo distancia="28,73" longitud="52.069722" latitud="-1.011111" altitud="151,01" sector="1"/>
-    <tramo distancia="641,62" longitud="52.064444" latitud="-1.015556" altitud="147,95" sector="1"/>
-    <tramo distancia="99,9" longitud="52.063889" latitud="-1.016389" altitud="150,24" sector="1"/>
-    <tramo distancia="38,96" longitud="52.063611" latitud="-1.016944" altitud="150,87" sector="1"/>
-    <tramo distancia="45,25" longitud="52.063333" latitud="-1.017500" altitud="151,34" sector="1"/>
-    <tramo distancia="76,2" longitud="52.063611" latitud="-1.018611" altitud="151,38" sector="1"/>
-    <tramo distancia="67,9" longitud="52.064167" latitud="-1.019167" altitud="150,44" sector="1"/>
-    <tramo distancia="130,37" longitud="52.065000" latitud="-1.020000" altitud="146,58" sector="1"/>
-    <tramo distancia="182,52" longitud="52.066389" latitud="-1.021944" altitud="145,85" sector="1"/>
-    <tramo distancia="13,85" longitud="52.066389" latitud="-1.021944" altitud="145,77" sector="1"/>
-    <tramo distancia="13,52" longitud="52.066389" latitud="-1.021944" altitud="145,77" sector="1"/>
-    <tramo distancia="46,36" longitud="52.066111" latitud="-1.022778" altitud="146,22" sector="1"/>
-    <tramo distancia="18,23" longitud="52.066111" latitud="-1.023056" altitud="146,57" sector="1"/>
-    <tramo distancia="20,6" longitud="52.066111" latitud="-1.023333" altitud="146,78" sector="1"/>
-    <tramo distancia="62,92" longitud="52.066667" latitud="-1.023889" altitud="146,5" sector="1"/>
-    <tramo distancia="62,74" longitud="52.067222" latitud="-1.024167" altitud="146,53" sector="1"/>
-    <tramo distancia="34,24" longitud="52.067500" latitud="-1.024167" altitud="144,84" sector="1"/>
-    <tramo distancia="18,34" longitud="52.067500" latitud="-1.024167" altitud="143,86" sector="1"/>
-    <tramo distancia="81,64" longitud="52.068056" latitud="-1.023333" altitud="144,6" sector="1"/>
+ <tramos> 
+  <tramo sector="1">
+    <distancia_tramo unidades="m">410.06</distancia_tramo>
+    <longitud_tramo unidades="°">-1.019830128447543</longitud_tramo>
+    <latitud_tramo unidades="°">52.07119829430768</latitud_tramo>
+    <altitud_tramo unidades="m">150.1671797303125</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">74.27</distancia_tramo>
+    <longitud_tramo unidades="°">-1.01876972201569</longitud_tramo>
+    <latitud_tramo unidades="°">52.07134415664211</latitud_tramo>
+    <altitud_tramo unidades="m">149.9952590991023</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">103.59</distancia_tramo>
+    <longitud_tramo unidades="°">-1.017269282525106</longitud_tramo>
+    <latitud_tramo unidades="°">52.07121244518698</latitud_tramo>
+    <altitud_tramo unidades="m">151.9052034266277</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">49.71</distancia_tramo>
+    <longitud_tramo unidades="°">-1.016542463552719</longitud_tramo>
+    <latitud_tramo unidades="°">52.07122825932527</latitud_tramo>
+    <altitud_tramo unidades="m">152.0305905851272</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">49.80</distancia_tramo>
+    <longitud_tramo unidades="°">-1.015870069147684</longitud_tramo>
+    <latitud_tramo unidades="°">52.07140083848225</latitud_tramo>
+    <altitud_tramo unidades="m">152.4751135878318</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">188.62</distancia_tramo>
+    <longitud_tramo unidades="°">-1.013718317150093</longitud_tramo>
+    <latitud_tramo unidades="°">52.07246296568587</latitud_tramo>
+    <altitud_tramo unidades="m">154.0310944885692</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">30.54</distancia_tramo>
+    <longitud_tramo unidades="°">-1.013287107079902</longitud_tramo>
+    <latitud_tramo unidades="°">52.0725350507166</latitud_tramo>
+    <altitud_tramo unidades="m">153.8102213217404</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">19.62</distancia_tramo>
+    <longitud_tramo unidades="°">-1.013071317516454</longitud_tramo>
+    <latitud_tramo unidades="°">52.07241873087544</latitud_tramo>
+    <altitud_tramo unidades="m">154.1562515771411</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">101.57</distancia_tramo>
+    <longitud_tramo unidades="°">-1.012623624626834</longitud_tramo>
+    <latitud_tramo unidades="°">52.07154769099485</latitud_tramo>
+    <altitud_tramo unidades="m">155.0580407989825</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">24.01</distancia_tramo>
+    <longitud_tramo unidades="°">-1.012347674521078</longitud_tramo>
+    <latitud_tramo unidades="°">52.07141402193572</latitud_tramo>
+    <altitud_tramo unidades="m">155.2689216279713</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">29.14</distancia_tramo>
+    <longitud_tramo unidades="°">-1.011958212109717</longitud_tramo>
+    <latitud_tramo unidades="°">52.0715205340105</latitud_tramo>
+    <altitud_tramo unidades="m">155.5631005705005</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">90.88</distancia_tramo>
+    <longitud_tramo unidades="°">-1.011549753559144</longitud_tramo>
+    <latitud_tramo unidades="°">52.07229832321701</latitud_tramo>
+    <altitud_tramo unidades="m">155.7046091314662</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">75.38</distancia_tramo>
+    <longitud_tramo unidades="°">-1.011447246281119</longitud_tramo>
+    <latitud_tramo unidades="°">52.07297332250932</latitud_tramo>
+    <altitud_tramo unidades="m">154.732692690435</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">14.32</distancia_tramo>
+    <longitud_tramo unidades="°">-1.01151071943674</longitud_tramo>
+    <latitud_tramo unidades="°">52.07309605066666</latitud_tramo>
+    <altitud_tramo unidades="m">154.7200446458884</altitud_tramo>
+</tramo>
+<tramo sector="1">
+    <distancia_tramo unidades="m">18.21</distancia_tramo>
+    <longitud_tramo unidades="°">-1.011684501782754</longitud_tramo>
+    <latitud_tramo unidades="°">52.07322013638694</latitud_tramo>
+    <altitud_tramo unidades="m">154.5194737588663</altitud_tramo>
+</tramo>
+
+ <tramo sector="2">
+    <distancia_tramo unidades="m">629.23</distancia_tramo>
+    <longitud_tramo unidades="°">-1.018526758811774</longitud_tramo>
+    <latitud_tramo unidades="°">52.07700642564061</latitud_tramo>
+    <altitud_tramo unidades="m">152.4449821272436</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">60.46</distancia_tramo>
+    <longitud_tramo unidades="°">-1.01938555505885</longitud_tramo>
+    <latitud_tramo unidades="°">52.07713712517122</latitud_tramo>
+    <altitud_tramo unidades="m">151.4207045637658</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">52.39</distancia_tramo>
+    <longitud_tramo unidades="°">-1.020024408222121</longitud_tramo>
+    <latitud_tramo unidades="°">52.07687674321814</latitud_tramo>
+    <altitud_tramo unidades="m">151.3353831040847</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">82.92</distancia_tramo>
+    <longitud_tramo unidades="°">-1.020197187696139</longitud_tramo>
+    <latitud_tramo unidades="°">52.0761386587228</latitud_tramo>
+    <altitud_tramo unidades="m">152.4751667361721</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">51.48</distancia_tramo>
+    <longitud_tramo unidades="°">-1.020740138713085</longitud_tramo>
+    <latitud_tramo unidades="°">52.07581775964901</latitud_tramo>
+    <altitud_tramo unidades="m">152.5069987993567</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">61.57</distancia_tramo>
+    <longitud_tramo unidades="°">-1.021570572343397</longitud_tramo>
+    <latitud_tramo unidades="°">52.07603255451268</latitud_tramo>
+    <altitud_tramo unidades="m">152.4013493429758</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">57.46</distancia_tramo>
+    <longitud_tramo unidades="°">-1.021586968555575</longitud_tramo>
+    <latitud_tramo unidades="°">52.07654917724236</latitud_tramo>
+    <altitud_tramo unidades="m">152.1458959009825</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">168.77</distancia_tramo>
+    <longitud_tramo unidades="°">-1.020384695049413</longitud_tramo>
+    <latitud_tramo unidades="°">52.07787494022628</latitud_tramo>
+    <altitud_tramo unidades="m">150.537850685179</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">65.58</distancia_tramo>
+    <longitud_tramo unidades="°">-1.019688622588463</longitud_tramo>
+    <latitud_tramo unidades="°">52.07828098103752</latitud_tramo>
+    <altitud_tramo unidades="m">151.1402998022992</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">74.99</distancia_tramo>
+    <longitud_tramo unidades="°">-1.018703917082977</longitud_tramo>
+    <latitud_tramo unidades="°">52.07857856772953</latitud_tramo>
+    <altitud_tramo unidades="m">151.1489598964246</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">55.44</distancia_tramo>
+    <longitud_tramo unidades="°">-1.017902554314394</longitud_tramo>
+    <latitud_tramo unidades="°">52.07865638678362</latitud_tramo>
+    <altitud_tramo unidades="m">151.2426733177737</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">386.94</distancia_tramo>
+    <longitud_tramo unidades="°">-1.012261269300879</longitud_tramo>
+    <latitud_tramo unidades="°">52.07895531909693</latitud_tramo>
+    <altitud_tramo unidades="m">153.7977281076318</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">48.32</distancia_tramo>
+    <longitud_tramo unidades="°">-1.011623852600038</longitud_tramo>
+    <latitud_tramo unidades="°">52.07876721887159</latitud_tramo>
+    <altitud_tramo unidades="m">153.644091023256</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">52.31</distancia_tramo>
+    <longitud_tramo unidades="°">-1.011136201090794</longitud_tramo>
+    <latitud_tramo unidades="°">52.07840466015906</latitud_tramo>
+    <altitud_tramo unidades="m">153.7827890881021</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">477.05</distancia_tramo>
+    <longitud_tramo unidades="°">-1.010185091176228</longitud_tramo>
+    <latitud_tramo unidades="°">52.07433866550169</latitud_tramo>
+    <altitud_tramo unidades="m">154.6128979185694</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">48.49</distancia_tramo>
+    <longitud_tramo unidades="°">-1.009923917116049</longitud_tramo>
+    <latitud_tramo unidades="°">52.07393319498046</latitud_tramo>
+    <altitud_tramo unidades="m">153.7976423841828</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">53.70</distancia_tramo>
+    <longitud_tramo unidades="°">-1.009541204641218</longitud_tramo>
+    <latitud_tramo unidades="°">52.07351137375181</latitud_tramo>
+    <altitud_tramo unidades="m">153.2879930066213</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">49.17</distancia_tramo>
+    <longitud_tramo unidades="°">-1.009664195999805</longitud_tramo>
+    <latitud_tramo unidades="°">52.07307569210331</latitud_tramo>
+    <altitud_tramo unidades="m">154.3747007736468</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">73.76</distancia_tramo>
+    <longitud_tramo unidades="°">-1.010044679674073</longitud_tramo>
+    <latitud_tramo unidades="°">52.07245498112735</latitud_tramo>
+    <altitud_tramo unidades="m">155.6729751713994</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">39.26</distancia_tramo>
+    <longitud_tramo unidades="°">-1.010123271757664</longitud_tramo>
+    <latitud_tramo unidades="°">52.07210526191563</latitud_tramo>
+    <altitud_tramo unidades="m">154.9372739840069</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">44.11</distancia_tramo>
+    <longitud_tramo unidades="°">-1.009950051286297</longitud_tramo>
+    <latitud_tramo unidades="°">52.07172309235361</latitud_tramo>
+    <altitud_tramo unidades="m">153.7975205291991</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">62.17</distancia_tramo>
+    <longitud_tramo unidades="°">-1.009403245887387</longitud_tramo>
+    <latitud_tramo unidades="°">52.07127633805737</latitud_tramo>
+    <altitud_tramo unidades="m">153.4232848584194</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">52.17</distancia_tramo>
+    <longitud_tramo unidades="°">-1.009347142648842</longitud_tramo>
+    <latitud_tramo unidades="°">52.07080839531294</latitud_tramo>
+    <altitud_tramo unidades="m">152.8984210646512</altitud_tramo>
+</tramo>
+<tramo sector="2">
+    <distancia_tramo unidades="m">46.64</distancia_tramo>
+    <longitud_tramo unidades="°">-1.009740575631715</longitud_tramo>
+    <latitud_tramo unidades="°">52.07046566252444</latitud_tramo>
+    <altitud_tramo unidades="m">152.2778104084623</altitud_tramo>
+</tramo>
+
+  <tramo sector="3">
+    <distancia_tramo unidades="m">113.70</distancia_tramo>
+    <longitud_tramo unidades="°">-1.011120898125799</longitud_tramo>
+    <latitud_tramo unidades="°">52.06989495123252</latitud_tramo>
+    <altitud_tramo unidades="m">151.1148980757517</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">769.42</distancia_tramo>
+    <longitud_tramo unidades="°">-1.016666132293746</longitud_tramo>
+    <latitud_tramo unidades="°">52.06387331321953</latitud_tramo>
+    <altitud_tramo unidades="m">150.2291090266673</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">85.94</distancia_tramo>
+    <longitud_tramo unidades="°">-1.017796785335828</longitud_tramo>
+    <latitud_tramo unidades="°">52.06353535166716</latitud_tramo>
+    <altitud_tramo unidades="m">151.2795431942978</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">72.48</distancia_tramo>
+    <longitud_tramo unidades="°">-1.018759201603788</longitud_tramo>
+    <latitud_tramo unidades="°">52.06380885812961</latitud_tramo>
+    <altitud_tramo unidades="m">151.3464427347261</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">63.63</distancia_tramo>
+    <longitud_tramo unidades="°">-1.0191917669256</longitud_tramo>
+    <latitud_tramo unidades="°">52.06431556611959</latitud_tramo>
+    <altitud_tramo unidades="m">150.646972564397</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">134.16</distancia_tramo>
+    <longitud_tramo unidades="°">-1.020303843253135</longitud_tramo>
+    <latitud_tramo unidades="°">52.06530970113955</latitud_tramo>
+    <altitud_tramo unidades="m">146.7905725924345</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">173.03</distancia_tramo>
+    <longitud_tramo unidades="°">-1.021983212003847</longitud_tramo>
+    <latitud_tramo unidades="°">52.06647401418978</latitud_tramo>
+    <altitud_tramo unidades="m">145.9233095538468</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">13.60</distancia_tramo>
+    <longitud_tramo unidades="°">-1.02213218465768</longitud_tramo>
+    <latitud_tramo unidades="°">52.06655504077271</latitud_tramo>
+    <altitud_tramo unidades="m">145.6810582515434</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">13.50</distancia_tramo>
+    <longitud_tramo unidades="°">-1.022328025601322</longitud_tramo>
+    <latitud_tramo unidades="°">52.06653929722122</latitud_tramo>
+    <altitud_tramo unidades="m">145.6863433326911</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">48.59</distancia_tramo>
+    <longitud_tramo unidades="°">-1.022861912336144</longitud_tramo>
+    <latitud_tramo unidades="°">52.0662508082995</latitud_tramo>
+    <altitud_tramo unidades="m">146.4274461074295</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">18.04</distancia_tramo>
+    <longitud_tramo unidades="°">-1.023118335806911</longitud_tramo>
+    <latitud_tramo unidades="°">52.06621242314149</latitud_tramo>
+    <altitud_tramo unidades="m">146.6611267369475</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">20.29</distancia_tramo>
+    <longitud_tramo unidades="°">-1.023361653382648</longitud_tramo>
+    <latitud_tramo unidades="°">52.06631695751169</latitud_tramo>
+    <altitud_tramo unidades="m">146.8167683540549</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">61.83</distancia_tramo>
+    <longitud_tramo unidades="°">-1.023953422691803</longitud_tramo>
+    <latitud_tramo unidades="°">52.06673751155101</latitud_tramo>
+    <altitud_tramo unidades="m">146.578509220654</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">62.51</distancia_tramo>
+    <longitud_tramo unidades="°">-1.024317525266834</longitud_tramo>
+    <latitud_tramo unidades="°">52.06725322390515</latitud_tramo>
+    <altitud_tramo unidades="m">145.6213628434503</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">37.08</distancia_tramo>
+    <longitud_tramo unidades="°">-1.024313188537048</longitud_tramo>
+    <latitud_tramo unidades="°">52.0675866617426</latitud_tramo>
+    <altitud_tramo unidades="m">144.5634221807799</altitud_tramo>
+</tramo>
+<tramo sector="3">
+    <distancia_tramo unidades="m">102.5</distancia_tramo>
+    <longitud_tramo unidades="°">-1.023496004592915</longitud_tramo>
+    <latitud_tramo unidades="°">52.0682791305414</latitud_tramo>
+    <altitud_tramo unidades="m">144.6525967819629</altitud_tramo>
+</tramo>
+
 </tramos>
 
     <vencedor>Marco Bezzecchi</vencedor>

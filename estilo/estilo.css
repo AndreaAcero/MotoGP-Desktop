@@ -47,7 +47,7 @@ header + p {
 
 /* Especificidad 003*/
 header + p strong {
-  color: #e53935;      /* destaca la página actual */
+  color: #9b110f;      /* destaca la página actual */
   font-weight: bold;
   /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 
@@ -58,7 +58,7 @@ header + p strong {
 h1 {
     font-family: "Georgia", serif;
     font-size: 2em;
-    color: #e53935; /* Color del texto del h1 */
+    color: #9b110f; /* Color del texto del h1 */
     /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
     /*background-color: inherit;  Herencia del fondo */
 }
@@ -68,7 +68,7 @@ h1 {
 h2 {
     font-family: "Georgia", serif;
     font-size: 1.5em;
-    color: #e53935; /* Color de los h2 */
+    color: #9b110f; /* Color de los h2 */
     /* Advertencia: se redefine el color y tamaño; herencia correcta del fondo */
 }
 /* Encabezados generales: h3 a h6 */
@@ -187,7 +187,7 @@ dl {
 /* Especificidad 002 */
 dt {
     font-weight: bold;        /* Destaca el término */
-    color: #e53935;           /* Color diferente para resaltar */
+    color: #9b110f;           /* Color diferente para resaltar */
     margin-top: 0.5rem;       /* Separación superior */
     /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 }
@@ -227,7 +227,7 @@ aside a[href^="http"]:visited {
 
 /* Especificidad 012: enlace activo */
 aside a[href^="http"]:active {
-    color: #e53935;              /* Rojo al hacer clic */
+    color: #9b110f;              /* Rojo al hacer clic */
     /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 }
 

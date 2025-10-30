@@ -47,7 +47,7 @@ header + p {
 
 /* Especificidad 003*/
 header + p strong {
-  color: #9b110f;      /* destaca la página actual */
+  color: #ffffff;      /* destaca la página actual */
   font-weight: bold;
   /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 
@@ -58,7 +58,7 @@ header + p strong {
 h1 {
     font-family: "Georgia", serif;
     font-size: 2em;
-    color: #9b110f; /* Color del texto del h1 */
+    color: #a75f5e; /* Color del texto del h1 */
     /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
     /*background-color: inherit;  Herencia del fondo */
 }

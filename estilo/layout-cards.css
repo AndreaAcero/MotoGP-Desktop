@@ -53,11 +53,11 @@ main h2 {
 @media screen and (max-width: 600px) {
   main {
     grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    grid-template-rows: auto repeat(6, 1fr); /* 6 filas para cartas */
+    grid-template-rows: auto; /* el grid se ajustará automáticamente */
   }
 
   .carta {
-    width: 80px;
-    height: 110px;
+    width: 40vw;   /* 40% del ancho de la pantalla */
+    height: 55vw;  /* proporción vertical */
   }
 }

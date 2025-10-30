@@ -45,19 +45,15 @@ main h2 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* ============================
-   Adaptabilidad (Responsive)
-   ============================ */
+/* Adaptabilidad) */
 
 /* Cuando el ancho de pantalla es menor o igual a 600px */
 @media screen and (max-width: 600px) {
   main {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    grid-template-rows: auto; /* el grid se ajustará automáticamente */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto; 
   }
-
-  .carta {
-    width: 40vw;   /* 40% del ancho de la pantalla */
-    height: 55vw;  /* proporción vertical */
-  }
+  main article {
+      width: 40vw;
+      }
 }

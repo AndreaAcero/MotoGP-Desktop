@@ -45,6 +45,14 @@ main h2 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+p {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+
+
 /* Adaptabilidad) */
 
 /* Cuando el ancho de pantalla es menor o igual a 600px */

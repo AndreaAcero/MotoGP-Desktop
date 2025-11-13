@@ -1,74 +1,94 @@
-class Cronometro{
-    constructor(){
-        this.tiempo = 0;
-        this.inicio = null;
-        this.corriendo = null;
-        this.usandoTemporal = false; 
-    }
-    
-    arrancar(){
+class Cronometro {
+    // Atributos privados
+    #tiempo = 0;
+    #inicio = null;
+    #corriendo = null;
+    #usandoTemporal = false;
+
+    // Callback público para actualizar la vista
+    onActualizar = null;
+
+    constructor() {}
+
+    arrancar() {
         try {
-            this.corriendo = setInterval(this.actualizar.bind(this), 100);
-            // Comprobamos si el objeto Temporal existe
+            this.#corriendo = setInterval(this.#actualizar.bind(this), 100);
+
             if (typeof Temporal !== "undefined" && Temporal.Now) {
-                // Si está disponible, usamos Temporal para obtener el instante actual
-                this.inicio = Temporal.Now.instant();
-                this.usandoTemporal = true;
+                this.#inicio = Temporal.Now.instant();
+                this.#usandoTemporal = true;
             } else {
-                // Si no está disponible, lanzamos un error para pasar al catch
                 throw new Error("Temporal no disponible");
             }
         } catch (error) {
-            // Fallback: usamos el objeto Date
-            this.inicio = new Date();
+            // Fallback: usamos Date
+            this.#inicio = new Date();
+            this.#usandoTemporal = false;
         }
-
-        console.log("Cronómetro arrancado en:", this.inicio);
     }
 
-    actualizar(){
-        let ahora;
-        //if (this.corriendo) return;
-        try{
-            if (this.usandoTemporal) {
+    #actualizar() {
+        try {
+            let ahora;
+            if (this.#usandoTemporal) {
                 ahora = Temporal.Now.instant();
-                this.tiempo = ahora.epochMilliseconds - this.inicio.epochMilliseconds;
+                this.#tiempo = ahora.epochMilliseconds - this.#inicio.epochMilliseconds;
             } else {
-                const ahora = new Date();
-                this.tiempo = ahora - this.inicio;
+                ahora = new Date();
+                this.#tiempo = ahora - this.#inicio;
             }
         } catch (error) {
             console.error("Error al actualizar el cronómetro:", error);
         }
-        
-        console.log("Tiempo transcurrido (ms):", this.tiempo);
+
+        this.#emitir();
     }
 
-    mostrar(){
-        let totalMilisegundos = this.tiempo;
-        let minutos = parseInt(totalMilisegundos / 60000); // 1 minuto = 60000 ms
-        let segundos = parseInt((totalMilisegundos % 60000) / 1000); // segundos restantes
-        let decimas = parseInt((totalMilisegundos % 1000) / 100); // décimas de segundo
-        let mm = String(minutos).padStart(2, '0');
-        let ss = String(segundos).padStart(2, '0');
-        let sDecima = String(decimas);
-        let tiempoFormateado = `${mm}:${ss}.${sDecima}`;
-        document.querySelector('main p').textContent = tiempoFormateado;
+    #emitir() {
+        if (typeof this.onActualizar === "function") {
+            this.onActualizar(this.formatear());
+        }
+    }
+
+    formatear() {
+        const totalMs = this.#tiempo;
+        const minutos = parseInt(totalMs / 60000);
+        const segundos = parseInt((totalMs % 60000) / 1000);
+        const decimas = parseInt((totalMs % 1000) / 100);
+        const mm = String(minutos).padStart(2, '0');
+        const ss = String(segundos).padStart(2, '0');
+        return `${mm}:${ss}.${decimas}`;
     }
 
     parar() {
-        this.mostrar();
-        clearInterval(this.corriendo);
-        this.corriendo = null; 
+        clearInterval(this.#corriendo);
+        this.#corriendo = null;
+        this.#emitir();
     }
 
-    reiniciar(){
-        clearInterval(this.corriendo);
-        this.corriendo=null;
-        this.tiempo=0;
-        this.mostrar();
+    reiniciar() {
+        clearInterval(this.#corriendo);
+        this.#corriendo = null;
+        this.#tiempo = 0;
+        this.#emitir();
     }
-
-
-
 }
+
+// JS que se ejecuta al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    const miCronometro = new Cronometro();
+
+    // Seleccionamos botones y párrafo sin usar id ni class
+    const botones = document.querySelectorAll('main button');
+    const parrafoTiempo = document.querySelector('main p');
+
+    // Callback para actualizar el DOM
+    miCronometro.onActualizar = (textoTiempo) => {
+        parrafoTiempo.textContent = textoTiempo;
+    };
+
+    // Listeners de botones según el orden en el HTML
+    botones[0].addEventListener('click', () => miCronometro.arrancar());
+    botones[1].addEventListener('click', () => miCronometro.parar());
+    botones[2].addEventListener('click', () => miCronometro.reiniciar());
+});

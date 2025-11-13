@@ -10,7 +10,7 @@
 main {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
-  grid-template-rows: auto repeat(3, 1fr); /* 1 fila para el título + 3 filas para cartas */
+  grid-template-rows: auto auto repeat(3, 1fr); /* 1 fila para el título + 3 filas para cartas */
   gap: 1rem; /* separación entre elementos */
   justify-items: center; /* centrar las cartas horizontalmente */
   align-items: center; /* centrar las cartas verticalmente */
@@ -23,33 +23,11 @@ main h2 {
   text-align: center;
 }
 
-/* Contenedor de las cartas */
-.cartas {
-  display: contents; /* permite que las cartas se distribuyan directamente en el grid */
-}
 
-/* Estilo base de cada carta */
-.carta {
-  width: 100px;
-  height: 140px;
-  background-color: #ccc; /* color gris para simular carta boca abajo */
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Efecto al pasar el ratón por encima */
-.carta:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-p {
-  grid-column: 1 / -1;
-  text-align: center;
-  font-size: 1.5em;
-  margin: 0.5em 0;
+main p {
+  grid-column: 1 / -1; /*Ocupa de la primera a la última columna */
+  text-align: center; /* Centrado del texto */
+  font-size: 1.5em; /*Tamaño de fuente aumentado */
 }
 
 

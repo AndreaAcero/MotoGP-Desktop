@@ -47,7 +47,7 @@ header + p {
 
 /* Especificidad 003*/
 header + p strong {
-  color: #ffffff;      /* destaca la página actual */
+  color: #9b110f;      /* destaca la página actual */
   font-weight: bold;
   /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 

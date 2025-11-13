@@ -50,4 +50,10 @@ nav {
     audio {
         width: 100%;               /* Redefinición: antes era auto */
     }
+
+    article h2 img {
+        width: 100%;               /* Redefinición: antes era 150px */
+        height: auto;              /* Mantiene proporción */
+        display : block;          /* Evita espacio inferior */
+    }
 }

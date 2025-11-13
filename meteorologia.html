@@ -13,6 +13,7 @@ de las palabras clave del mismo separadas por comas" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/favicon.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/ciudad.js"></script>
 </head>
 
@@ -32,8 +33,8 @@ de las palabras clave del mismo separadas por comas" />
     <p>Estás en: <a href="index.html">Inicio</a> &gt;&gt; <strong>Meteorología</strong></p>
     <main>
         <h2>Meteorología de MotoGP-Desktop</h2>
-        <div id="infoCiudad"></div>
-        <script>
+        <section data-contenedor-ciudad></section>
+<!--        <script>
             const ciudadMotoGP = new Ciudad("Towcester", "Reino Unido", "Towcesterian");
             ciudadMotoGP.setAtributos(150000, 41.38, 2.17);
             const contenedor = document.getElementById("infoCiudad");
@@ -51,9 +52,9 @@ de las palabras clave del mismo separadas por comas" />
                 divInfo.innerHTML = ciudadMotoGP.getGentilicioPoblacion();
                 contenedor.appendChild(divInfo);
 
-                // Coordenadas usando tu método (⚠ sobrescribirá el documento)
+                // Coordenadas usando tu método (sobrescribirá el documento)
                 ciudadMotoGP.getCoordenadas();
-        </script>
+        </script>-->
     </main>
 </body>
 </html>

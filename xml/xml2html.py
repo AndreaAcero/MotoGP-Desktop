@@ -24,15 +24,7 @@ class Html:
         self.addLine("<body>")
 
         # Estructura semántica principal
-        self.addLine("<header>")
-        self.addLine(f"    <h1>{titulo}</h1>")
-        self.addLine("    <nav>")
-        self.addLine("        <a href='../index.html'>Inicio</a>")
-        self.addLine("        <a href='#info'>Información</a>")
-        self.addLine("        <a href='#galeria'>Galería</a>")
-        self.addLine("        <a href='#clasificacion'>Clasificación</a>")
-        self.addLine("    </nav>")
-        self.addLine("</header>")
+        
         self.addLine("<main>")
 
     # -------------------------------

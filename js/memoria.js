@@ -96,7 +96,6 @@ class Memoria {
     }
 }
 
-// Instanciación
 document.addEventListener('DOMContentLoaded', () => {
     new Memoria();
 });

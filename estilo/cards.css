@@ -51,14 +51,3 @@ article img {
     transform: rotateY(180deg);
 }
 
-/* Adaptabilidad) */
-/* Cuando el ancho de pantalla es menor o igual a 600px */
-@media screen and (max-width: 600px) {
-  main {
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: auto; 
-  }
-  main article {
-    width: 40vw;
-    }
-}

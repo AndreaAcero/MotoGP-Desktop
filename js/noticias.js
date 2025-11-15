@@ -35,22 +35,30 @@ class Noticia{
         console.log("Noticias procesadas:", this.#noticias);
     }
 
-   mostrarNoticias() {
-    const $section = $("main section").last(); // segunda sección para noticias
+  mostrarNoticias() {
+    const $main = $('main');
 
-    $section.find("article").remove();
+    // Crear la segunda sección solo si no existe
+    let $section = $main.find('section').eq(1); // segunda sección
+    if ($section.length === 0) {
+        $section = $('<section></section>');
+        $main.append($section);
+    }
+
+    $section.find('article').remove();
 
     this.#noticias.forEach(noticia => {
-        const $article = $("<article></article>");
-        const $titulo = $("<h3></h3>").text(noticia.titulo);
-        const $entradilla = $("<p></p>").text(noticia.entradilla);
-        const $enlace = $("<a></a>").attr("href", noticia.enlace).attr("target", "_blank").text("Leer más");
-        const $fuente = $("<p></p>").text(`Fuente: ${noticia.fuente}`);
+        const $article = $('<article></article>');
+        const $titulo = $('<h3></h3>').text(noticia.titulo);
+        const $entradilla = $('<p></p>').text(noticia.entradilla);
+        const $enlace = $('<a></a>').attr('href', noticia.enlace).attr('target','_blank').text('Leer más');
+        const $fuente = $('<p></p>').text(`Fuente: ${noticia.fuente}`);
 
         $article.append($titulo, $entradilla, $enlace, $fuente);
         $section.append($article);
     });
 }
+
 
 }
 $(document).ready(function() {

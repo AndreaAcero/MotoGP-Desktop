@@ -40,30 +40,41 @@ class Carrusel {
 
     console.log("Fotos procesadas para el carrusel:", this.#fotos);
 }
-    mostrarFotografias(){
-        if(this.#fotos.length === 0) return;
+   mostrarFotografias() {
+    if (!this.#fotos || this.#fotos.length === 0) return;
 
-        const foto = this.#fotos[this.#actual];
+    const $main = $('main');
 
-        const $article = $("<article></article>");
-        const $h2 = $(`<h2>Imágenes del circuito de ${this.#busqueda}</h2>`);
-        const $img = $(`<img src="${foto}" alt=" ${foto.titulo}">`);
-        $article.append($h2);
-        $article.append($img);
-
-        $('main section').first().html($article);
-
-        setInterval(this.cambiarFotografia.bind(this), 3000);
-
+    // Crear la primera sección solo si no existe
+    let $seccion = $main.find('section').first();
+    if ($seccion.length === 0) {
+        $seccion = $('<section></section>');
+        $main.append($seccion);
     }
 
-    cambiarFotografia(){
-        if(this.#fotos.length === 0) return;
-        this.#actual = (this.#actual + 1) % this.#fotos.length;
-        const foto = this.#fotos[this.#actual];
-    $('main img').attr('src', foto.imagen).attr('alt', foto.titulo);
+    // Mostrar la foto actual
+    const foto = this.#fotos[this.#actual];
+    const $article = $('<article></article>');
+    const $h2 = $(`<h2>Imágenes del circuito de ${this.#busqueda}</h2>`);
+    const $img = $(`<img src="${foto.imagen}" alt="${foto.titulo}">`);
 
-    }
+    $article.append($h2, $img);
+    $seccion.html($article);
+
+    setInterval(this.cambiarFotografia.bind(this), 3000);
+}
+
+
+cambiarFotografia() {
+    if (!this.#fotos || this.#fotos.length === 0) return;
+
+    this.#actual = (this.#actual + 1) % this.#fotos.length;
+    const foto = this.#fotos[this.#actual];
+
+    // Actualizar la imagen dentro de la primera sección
+    $('main section').first().find('img').attr('src', foto.imagen).attr('alt', foto.titulo);
+}
+
 
     
 

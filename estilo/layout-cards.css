@@ -32,7 +32,6 @@ main p {
 
 
 /* Adaptabilidad) */
-
 /* Cuando el ancho de pantalla es menor o igual a 600px */
 @media screen and (max-width: 600px) {
   main {
@@ -40,6 +39,6 @@ main p {
     grid-template-rows: auto; 
   }
   main article {
-      width: 40vw;
+      width: 40vw; /*Redifinicion del ancho de las cartas para mejorar la adaptabilidad en moviles*/
       }
 }

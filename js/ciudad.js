@@ -4,18 +4,22 @@ class Ciudad {
     #gentilicio;
     #poblacion;
     #coordenadas;
+
     #datosCarrera; 
-    #datosProcesados;
     #datosEntrenos;
     #datosEntrenosProcesados;
+
+    #fechaCarrera;
+    #fechaInicioEntrenos;
+    #fechaFinEntrenos;
+    #horaCarrera;
+
     constructor(nombre, pais, gentilicio) {
         this.#nombre = nombre;
         this.#pais = pais;
         this.#gentilicio = gentilicio;
         this.#poblacion = 0;
         this.#coordenadas = { lat: 0, lon: 0 };
-        this.#datosCarrera = null;
-        this.#datosProcesados = null;
     }
 
     setAtributos(poblacion, lat, lon) {
@@ -24,21 +28,33 @@ class Ciudad {
         this.#coordenadas.lon = lon;
     }
 
-    getNombre() {
-        return this.#nombre;
+    setFechas(fechaCarrera, horaCarrera, fechaInicioEntrenos, fechaFinEntrenos) {
+        this.#fechaCarrera = fechaCarrera;
+        this.#horaCarrera = horaCarrera;
+        this.#fechaInicioEntrenos = fechaInicioEntrenos;
+        this.#fechaFinEntrenos = fechaFinEntrenos;
     }
 
-    getPais() {
-        return this.#pais;
+    mostrarInformacionBasica() {
+        const main = document.querySelector('main');
+
+        const seccion = document.createElement('section');
+        main.appendChild(seccion);
+
+        const p = document.createElement('p');
+        p.textContent = `La ciudad de ${this.#nombre} se encuentra en ${this.#pais}.`;
+        seccion.appendChild(p);
+
+        const ul = document.createElement('ul');
+        ul.innerHTML = `<li>Gentilicio: ${this.#gentilicio}</li><li>Población: ${this.#poblacion}</li>`;
+        seccion.appendChild(ul);
+
+        const coords = document.createElement('p');
+        coords.textContent = `Coordenadas: Latitud ${this.#coordenadas.lat}, Longitud ${this.#coordenadas.lon}`;
+        seccion.appendChild(coords);
     }
 
-    getGentilicioPoblacion() {
-        return { gentilicio: this.#gentilicio, poblacion: this.#poblacion };
-    }
-
-    getCoordenadas() {
-        return { lat: this.#coordenadas.lat, lon: this.#coordenadas.lon };
-    }
+    // --- MÉTODOS DE METEOROLOGÍA ---
 
     getMeteorologiaCarrera(fecha) {
         const url = "https://archive-api.open-meteo.com/v1/archive";
@@ -54,257 +70,196 @@ class Ciudad {
         })
         .done((data) => {
             console.log("Datos meteorológicos del día de la carrera:", data);
-            this.#datosCarrera = data;  
+            this.#datosCarrera = data;
         })
         .fail((jqxhr, textStatus, error) => {
             console.error("Error al obtener los datos meteorológicos:", error);
         });
     }
-    
+
     procesarJSONCarrera() {
-        if (!this.#datosCarrera) return null;
+        if (!this.#datosCarrera || !this.#datosCarrera.hourly) return null;
 
-        const data = this.#datosCarrera;
-
-        // Datos diarios
-        const sunrise = data.daily?.sunrise?.[0] || null;
-        const sunset = data.daily?.sunset?.[0] || null;
-
-        // Datos horarios
-        const hourly = data.hourly || {};
-        const horas = hourly.time || [];
-        const temperaturas = hourly.temperature_2m || [];
-        const sensaciones = hourly.apparent_temperature || [];
-        const lluvias = hourly.rain || [];
-        const humedades = hourly.relativehumidity_2m || [];
-        const vientos = hourly.windspeed_10m || [];
-        const direcciones = hourly.winddirection_10m || [];
-
-        const datosHorarios = horas.map((hora, i) => ({
+        const d = this.#datosCarrera;
+        return d.hourly.time.map((hora, i) => ({
             hora: hora,
-            temperatura: temperaturas[i],
-            sensacion: sensaciones[i],
-            lluvia: lluvias[i],
-            humedad: humedades[i],
-            viento: vientos[i],
-            direccionViento: direcciones[i]
+            temperatura2m: d.hourly.temperature_2m[i],
+            sensacionTermica: d.hourly.apparent_temperature[i],
+            lluvia: d.hourly.rain[i],
+            humedad2m: d.hourly.relativehumidity_2m[i],
+            velocidadViento10m: d.hourly.windspeed_10m[i],
+            direccionViento10m: d.hourly.winddirection_10m[i],
+            sunrise: d.daily.sunrise[0],
+            sunset: d.daily.sunset[0]
         }));
-
-        this.#datosProcesados = {
-            sunrise,
-            sunset,
-            horarios: datosHorarios
-        };
-
-        console.log("Datos procesados del día de la carrera:", this.#datosProcesados);
-        return this.#datosProcesados;
-    }
-
-    getDatosProcesados() {
-        return this.#datosProcesados;
     }
 
     mostrarMeteorologiaCarrera(datos) {
-    if (!datos) return;
+        if (!datos || datos.length === 0) return;
 
-    const $section = $('[data-contenedor-ciudad]');
-    $section.empty(); 
+        const main = document.querySelector('main');
+        const seccion = document.createElement('section');
+        main.appendChild(seccion);
 
-    const $h3 = $('<h3>Datos meteorológicos del día de la carrera</h3>');
-    $section.append($h3);
+        const h3 = document.createElement('h3');
+        h3.textContent = "Datos meteorológicos del día de la carrera";
+        seccion.appendChild(h3);
 
-    const $pSol = $(`
-        <p>
-            <strong>Amanecer:</strong> ${datos.sunrise}<br>
-            <strong>Atardecer:</strong> ${datos.sunset}
-        </p>
-    `);
-    $section.append($pSol);
+        const primeraHora = datos[0];
+        const pSol = document.createElement('p');
+        pSol.innerHTML = `<strong>Amanecer:</strong> ${primeraHora.sunrise}<br><strong>Atardecer:</strong> ${primeraHora.sunset}`;
+        seccion.appendChild(pSol);
 
-    const $tabla = $(`
-        <table>
-            <thead>
-                <tr>
-                    <th>Hora</th>
-                    <th>Temp (°C)</th>
-                    <th>Sensación térmica (°C)</th>
-                    <th>Lluvia (mm)</th>
-                    <th>Humedad (%)</th>
-                    <th>Viento (km/h)</th>
-                    <th>Dirección (°)</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    `);
+        const h4Tabla = document.createElement('h4');
+        h4Tabla.textContent = `Condiciones meteorológicas del día ${this.#fechaCarrera} a las ${this.#horaCarrera}`;
+        seccion.appendChild(h4Tabla);
 
-    datos.horarios.slice(0, 10).forEach(d => {
-        const $fila = $(`
-            <tr>
-                <td>${d.hora}</td>
-                <td>${d.temperatura}</td>
-                <td>${d.sensacion}</td>
-                <td>${d.lluvia}</td>
-                <td>${d.humedad}</td>
-                <td>${d.viento}</td>
-                <td>${d.direccionViento}</td>
-            </tr>
-        `);
-        $tabla.find('tbody').append($fila);
-    });
+        const tabla = document.createElement('table');
+        const thead = document.createElement('thead');
+        thead.innerHTML = `<tr>
+            <th>Hora</th>
+            <th>Temp (°C)</th>
+            <th>Sensación térmica (°C)</th>
+            <th>Lluvia (mm)</th>
+            <th>Humedad (%)</th>
+            <th>Velocidad del viento (km/h)</th>
+            <th>Dirección del viento(°)</th>
+        </tr>`;
+        tabla.appendChild(thead);
 
-    $section.append($tabla);
+        const tbody = document.createElement('tbody');
+
+        // Mostrar solo la hora de la carrera
+        const horaCarreraCompleta = `${this.#fechaCarrera}T${this.#horaCarrera}`;
+        const datoHoraCarrera = datos.find(d => d.hora === horaCarreraCompleta);
+
+        if (datoHoraCarrera) {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `<td>${datoHoraCarrera.hora}</td>
+                              <td>${datoHoraCarrera.temperatura2m}</td>
+                              <td>${datoHoraCarrera.sensacionTermica}</td>
+                              <td>${datoHoraCarrera.lluvia}</td>
+                              <td>${datoHoraCarrera.humedad2m}</td>
+                              <td>${datoHoraCarrera.velocidadViento10m}</td>
+                              <td>${datoHoraCarrera.direccionViento10m}</td>`;
+            tbody.appendChild(fila);
+        } else {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `<td colspan="7">No hay datos para la hora de la carrera (${this.#horaCarrera})</td>`;
+            tbody.appendChild(fila);
+        }
+
+        tabla.appendChild(tbody);
+        seccion.appendChild(tabla);
     }
 
     getMeteorologiaEntrenos(fechaInicio, fechaFin) {
-    const url = "https://archive-api.open-meteo.com/v1/archive";
+        const url = "https://archive-api.open-meteo.com/v1/archive";
 
-    return $.getJSON(url, {
-        latitude: this.#coordenadas.lat,
-        longitude: this.#coordenadas.lon,
-        start_date: fechaInicio,
-        end_date: fechaFin,
-        hourly: "temperature_2m,rain,windspeed_10m,relativehumidity_2m",
-        timezone: "Europe/London"
-    })
-    .done((data) => {
-        console.log("Datos meteorológicos de los entrenamientos:", data);
-        this.#datosEntrenos = data;  // Guardamos el objeto JSON recibido
-    })
-    .fail((jqxhr, textStatus, error) => {
-        console.error("Error al obtener los datos de entrenamientos:", error);
-    });
-}
-
-procesarJSONEntrenos() {
-    if (!this.#datosEntrenos || !this.#datosEntrenos.hourly) {
-        console.error("No hay datos de entrenamientos para procesar");
-        return null;
+        return $.getJSON(url, {
+            latitude: this.#coordenadas.lat,
+            longitude: this.#coordenadas.lon,
+            start_date: fechaInicio,
+            end_date: fechaFin,
+            hourly: "temperature_2m,rain,windspeed_10m,relativehumidity_2m",
+            timezone: "Europe/London"
+        })
+        .done((data) => {
+            console.log("Datos meteorológicos de los entrenamientos:", data);
+            this.#datosEntrenos = data;
+        })
+        .fail((jqxhr, textStatus, error) => {
+            console.error("Error al obtener los datos de entrenamientos:", error);
+        });
     }
 
-    const hourly = this.#datosEntrenos.hourly;
-    const horas = hourly.time;
-    const temperaturas = hourly.temperature_2m;
-    const lluvias = hourly.rain;
-    const vientos = hourly.windspeed_10m;
-    const humedades = hourly.relativehumidity_2m;
+    procesarJSONEntrenos() {
+        if (!this.#datosEntrenos || !this.#datosEntrenos.hourly) return null;
 
-    // Objeto para agrupar datos por día
-    const datosPorDia = {};
+        const hourly = this.#datosEntrenos.hourly;
+        const horas = hourly.time;
+        const temperaturas = hourly.temperature_2m;
+        const lluvias = hourly.rain;
+        const vientos = hourly.windspeed_10m;
+        const humedades = hourly.relativehumidity_2m;
 
-    horas.forEach((hora, i) => {
-        const dia = hora.split("T")[0]; // Ej: "2025-07-31"
-        if (!datosPorDia[dia]) {
-            datosPorDia[dia] = {
-                temperatura: [],
-                lluvia: [],
-                viento: [],
-                humedad: []
+        const datosPorDia = {};
+
+        horas.forEach((hora, i) => {
+            const dia = hora.split("T")[0];
+            if (!datosPorDia[dia]) {
+                datosPorDia[dia] = { temperatura: [], lluvia: [], viento: [], humedad: [] };
+            }
+            datosPorDia[dia].temperatura.push(temperaturas[i]);
+            datosPorDia[dia].lluvia.push(lluvias[i]);
+            datosPorDia[dia].viento.push(vientos[i]);
+            datosPorDia[dia].humedad.push(humedades[i]);
+        });
+
+        const mediasPorDia = Object.entries(datosPorDia).map(([dia, valores]) => {
+            const media = arr => (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(2);
+            return {
+                dia,
+                temperaturaMedia: media(valores.temperatura),
+                lluviaMedia: media(valores.lluvia),
+                vientoMedio: media(valores.viento),
+                humedadMedia: media(valores.humedad)
             };
-        }
-        datosPorDia[dia].temperatura.push(temperaturas[i]);
-        datosPorDia[dia].lluvia.push(lluvias[i]);
-        datosPorDia[dia].viento.push(vientos[i]);
-        datosPorDia[dia].humedad.push(humedades[i]);
-    });
+        });
 
-    // Calcular medias
-    const mediasPorDia = Object.entries(datosPorDia).map(([dia, valores]) => {
-        const media = (arr) => (arr.reduce((a, b) => a + b, 0) / arr.length).toFixed(2);
-        return {
-            dia,
-            temperaturaMedia: media(valores.temperatura),
-            lluviaMedia: media(valores.lluvia),
-            vientoMedio: media(valores.viento),
-            humedadMedia: media(valores.humedad)
-        };
-    });
-
-    // Guardar en un atributo privado
-    this.#datosEntrenosProcesados = mediasPorDia;
-    console.log("Datos procesados de entrenamientos:", mediasPorDia);
-
-    return mediasPorDia;
-}
-
-mostrarMeteorologiaEntrenos(datos) {
-    if (!datos || datos.length === 0) {
-        console.warn("No hay datos de entrenamientos para mostrar.");
-        return;
+        this.#datosEntrenosProcesados = mediasPorDia;
+        return mediasPorDia;
     }
 
-    const $section = $('[data-contenedor-ciudad]');
+    mostrarMeteorologiaEntrenos(datos) {
+        if (!datos || datos.length === 0) return;
 
-    // Añadir un título
-    const $h3 = $('<h3>Medias meteorológicas de los entrenamientos</h3>');
-    $section.append($h3);
+        const main = document.querySelector('main');
+        const seccion = document.createElement('section');
+        main.appendChild(seccion);
 
-    // Crear tabla
-    const $tabla = $(`
-        <table>
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Temperatura media (°C)</th>
-                    <th>Lluvia media (mm)</th>
-                    <th>Viento medio (km/h)</th>
-                    <th>Humedad media (%)</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    `);
+        const h3 = document.createElement('h3');
+        h3.textContent = "Medias meteorológicas de los entrenamientos";
+        seccion.appendChild(h3);
 
-    // Rellenar la tabla con los datos procesados
-    datos.forEach(d => {
-        const $fila = $(`
-            <tr>
-                <td>${d.dia}</td>
-                <td>${d.temperaturaMedia}</td>
-                <td>${d.lluviaMedia}</td>
-                <td>${d.vientoMedio}</td>
-                <td>${d.humedadMedia}</td>
-            </tr>
-        `);
-        $tabla.find('tbody').append($fila);
-    });
+        const tabla = document.createElement('table');
+        const thead = document.createElement('thead');
+        thead.innerHTML = `<tr>
+            <th>Fecha</th>
+            <th>Temperatura media (°C)</th>
+            <th>Lluvia media (mm)</th>
+            <th>Viento medio (km/h)</th>
+            <th>Humedad media (%)</th>
+        </tr>`;
+        tabla.appendChild(thead);
 
-    $section.append($tabla);
+        const tbody = document.createElement('tbody');
+        datos.forEach(d => {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `<td>${d.dia}</td>
+                              <td>${d.temperaturaMedia}</td>
+                              <td>${d.lluviaMedia}</td>
+                              <td>${d.vientoMedio}</td>
+                              <td>${d.humedadMedia}</td>`;
+            tbody.appendChild(fila);
+        });
+        tabla.appendChild(tbody);
+        seccion.appendChild(tabla);
+    }
 }
 
-
-}
-document.addEventListener('DOMContentLoaded', () => {
+// --- Uso ---
+document.addEventListener('DOMContentLoaded', async () => {
     const ciudad = new Ciudad("Towcester", "Reino Unido", "Towcesterian");
     ciudad.setAtributos(150000, 52.13, -0.99);
+    ciudad.setFechas("2025-05-25", "15:00", "2025-05-22", "2025-05-24");
 
-    const fechaCarrera = "2025-08-03";
-    const fechaInicioEntrenos = "2025-07-31";
-    const fechaFinEntrenos = "2025-08-02";
+    // Primero se muestra la info básica
+    ciudad.mostrarInformacionBasica();
 
-    const $section = $('[data-contenedor-ciudad]');
-    $section.empty();
+    await ciudad.getMeteorologiaCarrera("2025-05-25");
+    ciudad.mostrarMeteorologiaCarrera(ciudad.procesarJSONCarrera());
 
-    const $intro = $(`<p>La ciudad de ${ciudad.getNombre()} se encuentra en ${ciudad.getPais()}.</p>`);
-    $section.append($intro);
-
-    const info = ciudad.getGentilicioPoblacion();
-    const $ul = $(`<ul><li>Gentilicio: ${info.gentilicio}</li><li>Población: ${info.poblacion}</li></ul>`);
-    $section.append($ul);
-
-    const coords = ciudad.getCoordenadas();
-    const $pCoords = $(`<p>Coordenadas: Latitud ${coords.lat}, Longitud ${coords.lon}</p>`);
-    $section.append($pCoords);
-
-    // Obtener y mostrar datos de la carrera
-    ciudad.getMeteorologiaCarrera(fechaCarrera).done(() => {
-        const datosCarrera = ciudad.procesarJSONCarrera();
-        ciudad.mostrarMeteorologiaCarrera(datosCarrera);
-    });
-
-    // Obtener y mostrar datos de los entrenamientos
-    ciudad.getMeteorologiaEntrenos(fechaInicioEntrenos, fechaFinEntrenos).done(() => {
-        const datosEntrenos = ciudad.procesarJSONEntrenos();
-        ciudad.mostrarMeteorologiaEntrenos(datosEntrenos);
-    });
+    await ciudad.getMeteorologiaEntrenos("2025-05-22", "2025-05-24");
+    ciudad.mostrarMeteorologiaEntrenos(ciudad.procesarJSONEntrenos());
 });

@@ -56,4 +56,23 @@ nav {
         height: auto;              /* Mantiene proporción */
         display : block;          /* Evita espacio inferior */
     }
+
+    /* TAREA 6: tamaño del mapa dinámico */
+    body > div {
+        width: 80%;
+        height: 500px;
+        margin: 2em auto;
+        border: 2px solid #000;
+    }
+
+    /* TAREA 7: adaptabilidad para móviles */
+@media (max-width: 600px) {
+    body > div {
+        width: 100%;
+        height: 400px;
+        margin: 0;
+        border: none;
+    }
+}
+
 }

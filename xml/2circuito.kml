@@ -2,16 +2,11 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <Placemark>
-      <name>Punto de Origen</name>
-      <Point>
-        <coordinates>-1.023496004592915,52.0682791305414,144.6525967819629</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
       <name>Silverstone Circuit</name>
       <LineString>
         <altitudeMode>absolute</altitudeMode>
         <coordinates>
+          -1.023496004592915,52.0682791305414,144.6525967819629
           -1.019830128447543,52.07119829430768,150.1671797303125
           -1.01876972201569,52.07134415664211,149.9952590991023
           -1.017269282525106,52.07121244518698,151.9052034266277

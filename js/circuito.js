@@ -129,6 +129,7 @@ class CargadorKML {
                     const [lon, lat] = nodoOrigen.textContent.trim().split(",");
                     this.#origen = { lat: parseFloat(lat), lon: parseFloat(lon) };
                 }
+                
 
                 // TRAMOS
                 this.#tramos = [];
@@ -142,6 +143,8 @@ class CargadorKML {
                     });
                     this.#tramos.push(tramo);
                 });
+                console.log("Origen:", this.#origen);
+                console.log("Tramos:", this.#tramos);
 
                 this.insertarCapaKML(mapa);
             }, 0);
@@ -150,59 +153,77 @@ class CargadorKML {
     }
 
     insertarCapaKML(mapa) {
-        if (!this.#origen || this.#tramos.length === 0) {
-            alert("Primero debes cargar un archivo KML válido.");
-            return;
-        }
-
-        // Limpiar marcador y polilíneas previas
-        if (this.#marcador) this.#marcador.setMap(null);
-        this.#polilineas.forEach(p => p.setMap(null));
-        this.#polilineas = [];
-
-        // Marcador de inicio
-        this.#marcador = new google.maps.Marker({
-            position: { lat: this.#origen.lat, lng: this.#origen.lon },
-            map: mapa,
-            title: "Punto de inicio del circuito"
-        });
-
-        // Polilíneas
-        this.#tramos.forEach(tramo => {
-            const camino = tramo.map(p => ({ lat: p.lat, lng: p.lon }));
-            const polilinea = new google.maps.Polyline({
-                path: camino,
-                strokeWeight: 4,
-                strokeColor: "#ff0000",
-                map: mapa
-            });
-            this.#polilineas.push(polilinea);
-        });
-
-        // Ajustar límites del mapa
-        const limites = new google.maps.LatLngBounds();
-        limites.extend(new google.maps.LatLng(this.#origen.lat, this.#origen.lon));
-        this.#tramos.forEach(tramo => {
-            tramo.forEach(p => limites.extend(new google.maps.LatLng(p.lat, p.lon)));
-        });
-        mapa.fitBounds(limites);
+    if (!this.#origen || this.#tramos.length === 0) {
+        alert("Primero debes cargar un archivo KML válido.");
+        return;
     }
+
+    // Limpiar marcador y polilíneas previas
+    if (this.#marcador) this.#marcador.setMap(null);
+    this.#polilineas.forEach(p => p.setMap(null));
+    this.#polilineas = [];
+
+    // Marcador de inicio
+    this.#marcador = new google.maps.Marker({
+        position: { lat: this.#origen.lat, lng: this.#origen.lon },
+        map: mapa,
+        title: "Punto de inicio del circuito"
+    });
+
+    // --- Conectar el origen con el primer punto del primer tramo ---
+    const primerTramo = this.#tramos[0];
+    const caminoInicial = [
+        { lat: this.#origen.lat, lng: this.#origen.lon },
+        { lat: primerTramo[0].lat, lng: primerTramo[0].lon }
+    ];
+    const polilineaInicial = new google.maps.Polyline({
+        path: caminoInicial,
+        strokeWeight: 4,
+        strokeColor: "#ff0000",
+        map: mapa
+    });
+    this.#polilineas.push(polilineaInicial);
+
+    // Dibujar todos los tramos
+    this.#tramos.forEach(tramo => {
+        const camino = tramo.map(p => ({ lat: p.lat, lng: p.lon }));
+        const polilinea = new google.maps.Polyline({
+            path: camino,
+            strokeWeight: 4,
+            strokeColor: "#ff0000",
+            map: mapa
+        });
+        this.#polilineas.push(polilinea);
+    });
+
+    // Ajustar límites del mapa para que se vea todo
+    const limites = new google.maps.LatLngBounds();
+    limites.extend(new google.maps.LatLng(this.#origen.lat, this.#origen.lon));
+    this.#tramos.forEach(tramo => {
+        tramo.forEach(p => limites.extend(new google.maps.LatLng(p.lat, p.lon)));
+    });
+    mapa.fitBounds(limites);
+}
+
 }
 
 let mapaGoogle;
 
 function initMap() {
-    const divMapa = document.querySelector("main + div"); // div anónimo del mapa
+    // Selecciona el div anónimo que es hijo directo de body y último
+    const divMapa = document.querySelector("body > div:last-of-type");
     if (!divMapa) {
         console.error("No se encontró el div del mapa");
         return;
     }
+    console.log(divMapa);
 
     mapaGoogle = new google.maps.Map(divMapa, {
-        center: { lat: 0, lng: 0 },
+        center: { lat: 52.07031113181628, lng: -1.0135833960740852},
         zoom: 8
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const circuito = new Circuito();

@@ -36,28 +36,44 @@ class Noticia{
     }
 
   mostrarNoticias() {
-    const $main = $('main');
+    const main = document.querySelector('main');
 
     // Crear la segunda sección solo si no existe
-    let $section = $main.find('section').eq(1); // segunda sección
-    if ($section.length === 0) {
-        $section = $('<section></section>');
-        $main.append($section);
+    let section = main.querySelectorAll('section')[1];
+    if (!section) {
+        section = document.createElement('section');
+        main.appendChild(section);
+        
+        // Añadir encabezado de la sección
+        const h2 = document.createElement('h2');
+        h2.textContent = "Últimas noticias MotoGP 2025"; 
+        section.appendChild(h2);
     }
-
-    $section.find('article').remove();
+    // Limpiar artículos previos
+    section.querySelectorAll('article').forEach(a => a.remove());
 
     this.#noticias.forEach(noticia => {
-        const $article = $('<article></article>');
-        const $titulo = $('<h3></h3>').text(noticia.titulo);
-        const $entradilla = $('<p></p>').text(noticia.entradilla);
-        const $enlace = $('<a></a>').attr('href', noticia.enlace).attr('target','_blank').text('Leer más');
-        const $fuente = $('<p></p>').text(`Fuente: ${noticia.fuente}`);
+        const article = document.createElement('article');
 
-        $article.append($titulo, $entradilla, $enlace, $fuente);
-        $section.append($article);
+        const h3 = document.createElement('h3');
+        h3.textContent = noticia.titulo;
+
+        const pEntradilla = document.createElement('p');
+        pEntradilla.textContent = noticia.entradilla;
+
+        const enlace = document.createElement('a');
+        enlace.href = noticia.enlace;
+        enlace.target = "_blank";
+        enlace.textContent = "Leer más";
+
+        const pFuente = document.createElement('p');
+        pFuente.textContent = `Fuente: ${noticia.fuente}`;
+
+        article.append(h3, pEntradilla, enlace, pFuente);
+        section.appendChild(article);
     });
 }
+
 
 
 }

@@ -183,7 +183,6 @@ class CargadorKML {
         map: mapa
     });
     this.#polilineas.push(polilineaInicial);
-
     // Dibujar todos los tramos
     this.#tramos.forEach(tramo => {
         const camino = tramo.map(p => ({ lat: p.lat, lng: p.lon }));
@@ -194,7 +193,9 @@ class CargadorKML {
             map: mapa
         });
         this.#polilineas.push(polilinea);
-    });
+    }
+    
+);
 
     // Ajustar límites del mapa para que se vea todo
     const limites = new google.maps.LatLngBounds();
@@ -211,7 +212,7 @@ let mapaGoogle;
 
 function initMap() {
     // Selecciona el div anónimo que es hijo directo de body y último
-    const divMapa = document.querySelector("body > div:last-of-type");
+    const divMapa = document.querySelector("body > div");
     if (!divMapa) {
         console.error("No se encontró el div del mapa");
         return;

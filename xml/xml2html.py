@@ -2,14 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 Genera un archivo InfoCircuito.html a partir de circuitoEsquema.xml
-Usa XPath para extraer información del XML y genera HTML con enlaces al CSS y multimedia,
-siguiendo las clases y estructura esperadas por las hojas de estilo del proyecto.
+Sin usar id ni class, mantiene la estructura semántica y enlaces a CSS y multimedia.
 """
 
 import xml.etree.ElementTree as ET
 
 class Html:
-    """Clase para generar código HTML compatible con las hojas de estilo"""
     def __init__(self, titulo="InfoCircuito"):
         self.lineas = []
         self.addLine("<!DOCTYPE html>")
@@ -22,9 +20,6 @@ class Html:
         self.addLine("    <link rel='stylesheet' href='../estilo/layout.css'>")
         self.addLine("</head>")
         self.addLine("<body>")
-
-        # Estructura semántica principal
-        
         self.addLine("<main>")
 
     # -------------------------------
@@ -33,11 +28,8 @@ class Html:
     def addLine(self, texto):
         self.lineas.append(texto)
 
-    def addSection(self, titulo, id=None, nivel=2):
-        if id:
-            self.addLine(f"<section id='{id}'>")
-        else:
-            self.addLine("<section>")
+    def addSection(self, titulo, nivel=2):
+        self.addLine("<section>")
         self.addLine(f"  <h{nivel}>{titulo}</h{nivel}>")
 
     def endSection(self):
@@ -53,8 +45,8 @@ class Html:
         self.addLine("</ul>")
 
     def addReferences(self, urls):
-        """Convierte las referencias en enlaces HTML válidos"""
-        self.addLine("<aside class='referencias'>")
+        """Genera aside sin clase ni id"""
+        self.addLine("<aside>")
         self.addLine("<h3>Referencias</h3>")
         self.addLine("<ul>")
         for u in urls:
@@ -63,8 +55,8 @@ class Html:
         self.addLine("</aside>")
 
     def addImages(self, rutas):
-        """Galería de imágenes adaptada al CSS (.galeria + <figure>)"""
-        self.addLine("<section class='galeria' id='galeria'>")
+        """Galería de fotos sin id ni class"""
+        self.addLine("<section>")
         self.addLine("  <h3>Galería de fotos</h3>")
         for r in rutas:
             nombre = r.split('/')[-1].split('.')[0].replace('_', ' ').capitalize()
@@ -75,8 +67,8 @@ class Html:
         self.addLine("</section>")
 
     def addVideos(self, rutas):
-        """Galería de videos con estructura compatible y responsive"""
-        self.addLine("<section class='galeria videos'>")
+        """Galería de videos sin id ni class"""
+        self.addLine("<section>")
         self.addLine("  <h3>Galería de videos</h3>")
         for r in rutas:
             nombre = r.split('/')[-1].split('.')[0].replace('_', ' ').capitalize()
@@ -101,7 +93,6 @@ class Html:
             f.write("\n".join(self.lineas))
         print(f"✅ Archivo '{archivo}' generado correctamente.")
 
-
 # --------------------------------------------------
 # Función principal
 # --------------------------------------------------
@@ -114,7 +105,7 @@ def main():
     html = Html(titulo="Información del Circuito")
 
     # Información del circuito
-    html.addSection("Información del circuito", id="info")
+    html.addSection("Información del circuito")
     datos = [
         ("Nombre", root.find('ns:nombre', ns).text),
         ("Longitud", f"{root.find('ns:longitud', ns).text} metros"),
@@ -154,7 +145,7 @@ def main():
 
     # Clasificación Mundial
     pilotos = root.findall('.//ns:clasificacionMundial/ns:piloto', ns)
-    html.addSection("Clasificación Mundial", id="clasificacion")
+    html.addSection("Clasificación Mundial")
     html.addLine("<table>")
     html.addLine("<thead><tr><th>Posición</th><th>Piloto</th><th>Puntos</th></tr></thead>")
     html.addLine("<tbody>")
@@ -168,7 +159,6 @@ def main():
 
     # Guardar HTML
     html.escribir("InfoCircuito.html")
-
 
 if __name__ == "__main__":
     main()

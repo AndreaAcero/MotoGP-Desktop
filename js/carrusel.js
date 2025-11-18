@@ -8,6 +8,7 @@ class Carrusel {
         this.#busqueda = busqueda;
         this.#actual = actual;
         this.#maximo = maximo;
+        this.#fotos=[];
     }
 
     getFotografias() {
@@ -40,43 +41,55 @@ class Carrusel {
 
     console.log("Fotos procesadas para el carrusel:", this.#fotos);
 }
-   mostrarFotografias() {
-    if (!this.#fotos || this.#fotos.length === 0) return;
+    mostrarFotografias() {
+        if (!this.#fotos || this.#fotos.length === 0) return;
 
-    const $main = $('main');
+        const main = document.querySelector('main');
+        let section = main.querySelector('section');
 
-    // Crear la primera sección solo si no existe
-    let $seccion = $main.find('section').first();
-    if ($seccion.length === 0) {
-        $seccion = $('<section></section>');
-        $main.append($seccion);
+        if (!section) {
+            section = document.createElement('section');
+            main.appendChild(section);
+            
+            // Añadir encabezado de la sección
+            const h2 = document.createElement('h2');
+            h2.textContent = "Galeria de imagenes MotoGP"; 
+            section.appendChild(h2);
+        }
+
+        // Crear el primer artículo
+        this.#mostrarFotoActual(section);
+
+        // Iniciar el carrusel
+        setInterval(() => this.cambiarFotografia(section), 3000);
     }
 
-    // Mostrar la foto actual
-    const foto = this.#fotos[this.#actual];
-    const $article = $('<article></article>');
-    const $h2 = $(`<h2>Imágenes del circuito de ${this.#busqueda}</h2>`);
-    const $img = $(`<img src="${foto.imagen}" alt="${foto.titulo}">`);
+    #mostrarFotoActual(section) {
+        const foto = this.#fotos[this.#actual];
 
-    $article.append($h2, $img);
-    $seccion.html($article);
+        const article = document.createElement('article');
+        const h2 = document.createElement('h2');
+        h2.textContent = `Imágenes del circuito de ${this.#busqueda}`;
 
-    setInterval(this.cambiarFotografia.bind(this), 3000);
-}
+        const img = document.createElement('img');
+        img.src = foto.imagen;
+        img.alt = foto.titulo;
 
+        article.appendChild(h2);
+        article.appendChild(img);
 
-cambiarFotografia() {
-    if (!this.#fotos || this.#fotos.length === 0) return;
+        section.innerHTML = ''; // Limpiar contenido previo
+        section.appendChild(article);
+        console.log(`Mostrando foto ${this.#actual + 1} de ${img.src }`);
+    }
 
-    this.#actual = (this.#actual + 1) % this.#fotos.length;
-    const foto = this.#fotos[this.#actual];
+    cambiarFotografia(section) {
+        if (!this.#fotos || this.#fotos.length === 0) return;
 
-    // Actualizar la imagen dentro de la primera sección
-    $('main section').first().find('img').attr('src', foto.imagen).attr('alt', foto.titulo);
-}
+        this.#actual = (this.#actual + 1) % this.#fotos.length;
+        this.#mostrarFotoActual(section);
+    }
 
-
-    
 
 }
 $(document).ready(function() {

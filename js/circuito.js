@@ -30,21 +30,30 @@ class Circuito {
         lector.readAsText(archivo, "UTF-8");
     }
 
-    mostrarContenido() {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(this.#contenido, "text/html");
+   mostrarContenido() {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(this.#contenido, "text/html");
+    const bodyOriginal = doc.body;
+    const main = document.querySelector("main");
 
-        const bodyOriginal = doc.body;
-        const main = document.querySelector("main");
+    // Limpiar contenido anterior (excepto los inputs de archivo, si quieres conservarlos)
+    // Aquí puedes ajustarlo según tu necesidad
+    main.querySelectorAll("section").forEach(sec => sec.remove());
 
-        if (this.#contenedorHTML) this.#contenedorHTML.remove();
+    // Recorrer todos los nodos del body del archivo cargado
+    Array.from(bodyOriginal.childNodes).forEach(node => {
+        // Si es main, copiamos su contenido dentro del main existente
+        if (node.nodeName.toLowerCase() === "main") {
+            Array.from(node.childNodes).forEach(n => main.appendChild(n));
+        } else {
+            // Si es otra cosa (section, p, h2...) se inserta directamente en main
+            main.appendChild(node);
+        }
+    });
 
-        this.#contenedorHTML = document.createElement("section");
-        this.#contenedorHTML.append(...bodyOriginal.childNodes);
+    this.arreglarRutas(main);
+}
 
-        main.appendChild(this.#contenedorHTML);
-        this.arreglarRutas(this.#contenedorHTML);
-    }
 
     arreglarRutas(contenedor) {
         const elementos = contenedor.querySelectorAll("img, video source");
@@ -85,10 +94,12 @@ class CargadorSVG {
         const svg = doc.documentElement;
 
         const main = document.querySelector("main");
-
+        const h3 = document.createElement('h3');
+        h3.textContent = "Representación archivo SVG";
         if (this.#contenedorSVG) this.#contenedorSVG.remove();
 
         this.#contenedorSVG = document.createElement("section");
+        this.#contenedorSVG.appendChild(h3);
         this.#contenedorSVG.appendChild(svg);
 
         main.appendChild(this.#contenedorSVG);

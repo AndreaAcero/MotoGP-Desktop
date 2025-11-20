@@ -84,9 +84,6 @@ class Html:
     def escribir(self, archivo):
         """Cierra las etiquetas y guarda el HTML"""
         self.addLine("</main>")
-        self.addLine("<footer>")
-        self.addLine("<p>&copy; 2025 MotoGP-Desktop | Datos generados automáticamente</p>")
-        self.addLine("</footer>")
         self.addLine("</body>")
         self.addLine("</html>")
         with open(archivo, "w", encoding="utf-8") as f:

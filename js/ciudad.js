@@ -41,6 +41,10 @@ class Ciudad {
         const seccion = document.createElement('section');
         main.appendChild(seccion);
 
+        const h3 = document.createElement('h3');
+        h3.textContent = `Información de la ciudad: ${this.#nombre}`;
+        seccion.appendChild(h3);
+
         const p = document.createElement('p');
         p.textContent = `La ciudad de ${this.#nombre} se encuentra en ${this.#pais}.`;
         seccion.appendChild(p);

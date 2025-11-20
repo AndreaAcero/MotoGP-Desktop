@@ -46,6 +46,7 @@ class Carrusel {
 
         const main = document.querySelector('main');
         let section = main.querySelector('section');
+      
 
         if (!section) {
             section = document.createElement('section');
@@ -67,18 +68,21 @@ class Carrusel {
     #mostrarFotoActual(section) {
         const foto = this.#fotos[this.#actual];
 
+         // Limpiar solo los artículos previos
+        Array.from(section.children)
+            .filter(node => node.tagName.toLowerCase() === 'article')
+            .forEach(a => a.remove());
         const article = document.createElement('article');
-        const h2 = document.createElement('h2');
-        h2.textContent = `Imágenes del circuito de ${this.#busqueda}`;
+        const h3 = document.createElement('h3');
+        h3.textContent = `Imágenes del circuito de ${this.#busqueda}`;
 
         const img = document.createElement('img');
         img.src = foto.imagen;
         img.alt = foto.titulo;
 
-        article.appendChild(h2);
+        article.appendChild(h3);
         article.appendChild(img);
 
-        section.innerHTML = ''; // Limpiar contenido previo
         section.appendChild(article);
         console.log(`Mostrando foto ${this.#actual + 1} de ${img.src }`);
     }

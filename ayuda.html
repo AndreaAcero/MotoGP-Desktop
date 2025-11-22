@@ -22,7 +22,7 @@
         <a href="piloto.html" title="Información del piloto">Piloto</a>  
         <a href="circuito.html" title="Información del circuito">Circuito</a>  
         <a href="meteorologia.html" title="Información de Meteorología">Meteorología</a>  
-        <a href="clasificaciones.html" title="Información de clasificaciones">Clasificaciones</a>  
+        <a href="clasificaciones.php" title="Información de clasificaciones">Clasificaciones</a>  
         <a href="juegos.html" title="Información de juegos">Juegos</a>  
         <a href="ayuda.html" title="Información de ayuda" class="active">Ayuda</a>  
     </nav>
@@ -43,48 +43,59 @@
     <section>
         <h2>Circuito</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.
+            En esta sección se muestra toda la información sobre el circuito seleccionado de MotoGP-Desktop. 
+            Puedes subir un archivo HTML con información detallada del circuito, un archivo SVG para visualizar 
+            gráficamente el trazado del circuito y un archivo KML para mostrar los puntos del circuito en el mapa. 
+            Se presenta el nombre del circuito, sus dimensiones (longitud y anchura), la fecha y hora de la carrera, 
+            el número de vueltas, la localidad, el país y el patrocinador. Además, se incluyen enlaces de referencia 
+            oficiales del circuito y una galería de fotos y vídeos relacionados. También se muestra el ganador de 
+            la carrera junto con su tiempo y la clasificación mundial actualizada tras la carrera.
         </p>
     </section>
 
     <section>
         <h2>Meteorología</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.
+            En esta sección se muestra la información meteorológica del circuito de MotoGP seleccionado. 
+            Los datos se obtienen mediante el servicio web Open-Meteo en formato JSON, utilizando llamadas 
+            AJAX con jQuery. Se incluye información de la ciudad donde se encuentra el circuito, como nombre, 
+            país, gentilicio, población y coordenadas. Además, se presentan las condiciones meteorológicas 
+            del día de la carrera, incluyendo temperatura, sensación térmica, lluvia, humedad, velocidad y 
+            dirección del viento, así como los horarios de amanecer y atardecer. También se muestran 
+            medias meteorológicas de los días de entrenamientos previos a la carrera, calculadas a partir 
+            de los datos procesados de temperatura, lluvia, viento y humedad. Toda esta información se 
+            muestra en tablas y elementos HTML creados dinámicamente mediante jQuery.
         </p>
     </section>
 
     <section>
         <h2>Clasificaciones</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.
+            En esta sección se muestran las clasificaciones del Mundial de MotoGP dentro de MotoGP Desktop.
+            Se indica el ganador de la carrera actual, con su nombre y tiempo, y se presenta la clasificación 
+            completa de los pilotos, mostrando la posición, el nombre y los puntos acumulados en el campeonato.
+            Esta información se actualiza tras cada carrera y permite consultar rápidamente quién lidera el 
+            campeonato y cómo se encuentran los demás pilotos en la clasificación general.
         </p>
     </section>
 
     <section>
         <h2>Juegos</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-            culpa qui officia deserunt mollit anim id est laborum.
+            En esta sección se encuentran los juegos incluidos en MotoGP Desktop. <br>
+            Juego de memoria con cartas: Un juego de cartas clásico en el que debes encontrar las parejas entre 
+        </p>
+        <ul>
+        <li><strong>Juego de memoria con cartas:</strong> Un juego de cartas clásico en el que debes encontrar las parejas entre 
+                    12 cartas volteándolas. Se registra el tiempo que tardas en completar el juego.</li>
+        <li><strong>Juego Cronómetro (JavaScript):</strong> n cronómetro que mide el tiempo desde que pulsas el botón de inicio 
+                    hasta que lo detienes, permitiéndote registrar tu tiempo de reacción o duración de cualquier actividad. </li>
+        <li><strong>Juego Cronómetro (PHP):</strong> Versión del cronómetro implementada con PHP, que registra los tiempos en el 
+                    servidor. El funcionamiento es el mismo: inicia y detén el cronómetro con un botón para medir tu tiempo</li>
+        </ul>
+        <p>
+            Los juegos están diseñados para poner a prueba la memoria y la rapidez de reacción del usuario, permitiendo 
+            comparar tiempos y mejorar la destreza en cada partida.
         </p>
     </section>
 

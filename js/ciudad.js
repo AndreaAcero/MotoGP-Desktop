@@ -98,64 +98,48 @@ class Ciudad {
         }));
     }
 
-    mostrarMeteorologiaCarrera(datos) {
-        if (!datos || datos.length === 0) return;
+   mostrarMeteorologiaCarrera(datos) {
+    if (!datos || datos.length === 0) return;
 
-        const main = document.querySelector('main');
-        const seccion = document.createElement('section');
-        main.appendChild(seccion);
+    const main = document.querySelector('main');
+    const seccion = document.createElement('section');
+    main.appendChild(seccion);
 
-        const h3 = document.createElement('h3');
-        h3.textContent = "Datos meteorológicos del día de la carrera";
-        seccion.appendChild(h3);
+    const h3 = document.createElement('h3');
+    h3.textContent = "Datos meteorológicos del día de la carrera";
+    seccion.appendChild(h3);
 
-        const primeraHora = datos[0];
-        const pSol = document.createElement('p');
-        pSol.innerHTML = `<strong>Amanecer:</strong> ${primeraHora.sunrise}<br><strong>Atardecer:</strong> ${primeraHora.sunset}`;
-        seccion.appendChild(pSol);
+    const primeraHora = datos[0];
+    const pSol = document.createElement('p');
+    pSol.innerHTML = `<strong>Amanecer:</strong> ${primeraHora.sunrise}<br><strong>Atardecer:</strong> ${primeraHora.sunset}`;
+    seccion.appendChild(pSol);
 
-        const h4Tabla = document.createElement('h4');
-        h4Tabla.textContent = `Condiciones meteorológicas del día ${this.#fechaCarrera} a las ${this.#horaCarrera}`;
-        seccion.appendChild(h4Tabla);
+    const h4Lista = document.createElement('h4');
+    h4Lista.textContent = `Condiciones meteorológicas del día ${this.#fechaCarrera} a las ${this.#horaCarrera}`;
+    seccion.appendChild(h4Lista);
 
-        const tabla = document.createElement('table');
-        const thead = document.createElement('thead');
-        thead.innerHTML = `<tr>
-            <th>Hora</th>
-            <th>Temp (°C)</th>
-            <th>Sensación térmica (°C)</th>
-            <th>Lluvia (mm)</th>
-            <th>Humedad (%)</th>
-            <th>Velocidad del viento (km/h)</th>
-            <th>Dirección del viento(°)</th>
-        </tr>`;
-        tabla.appendChild(thead);
+    const horaCarreraCompleta = `${this.#fechaCarrera}T${this.#horaCarrera}`;
+    const datoHoraCarrera = datos.find(d => d.hora === horaCarreraCompleta);
 
-        const tbody = document.createElement('tbody');
+    const ul = document.createElement('ul');
 
-        // Mostrar solo la hora de la carrera
-        const horaCarreraCompleta = `${this.#fechaCarrera}T${this.#horaCarrera}`;
-        const datoHoraCarrera = datos.find(d => d.hora === horaCarreraCompleta);
-
-        if (datoHoraCarrera) {
-            const fila = document.createElement('tr');
-            fila.innerHTML = `<td>${datoHoraCarrera.hora}</td>
-                              <td>${datoHoraCarrera.temperatura2m}</td>
-                              <td>${datoHoraCarrera.sensacionTermica}</td>
-                              <td>${datoHoraCarrera.lluvia}</td>
-                              <td>${datoHoraCarrera.humedad2m}</td>
-                              <td>${datoHoraCarrera.velocidadViento10m}</td>
-                              <td>${datoHoraCarrera.direccionViento10m}</td>`;
-            tbody.appendChild(fila);
-        } else {
-            const fila = document.createElement('tr');
-            fila.innerHTML = `<td colspan="7">No hay datos para la hora de la carrera (${this.#horaCarrera})</td>`;
-            tbody.appendChild(fila);
-        }
-
-        tabla.appendChild(tbody);
-        seccion.appendChild(tabla);
+    if (datoHoraCarrera) {
+        ul.innerHTML = `
+            <li><strong>Hora:</strong> ${datoHoraCarrera.hora}</li>
+            <li><strong>Temperatura:</strong> ${datoHoraCarrera.temperatura2m} °C</li>
+            <li><strong>Sensación térmica:</strong> ${datoHoraCarrera.sensacionTermica} °C</li>
+            <li><strong>Lluvia:</strong> ${datoHoraCarrera.lluvia} mm</li>
+            <li><strong>Humedad:</strong> ${datoHoraCarrera.humedad2m} %</li>
+            <li><strong>Velocidad del viento:</strong> ${datoHoraCarrera.velocidadViento10m} km/h</li>
+            <li><strong>Dirección del viento:</strong> ${datoHoraCarrera.direccionViento10m} °</li>
+        `;
+    } else {
+        ul.innerHTML = `<li>No hay datos para la hora de la carrera (${this.#horaCarrera})</li>`;
     }
+
+    seccion.appendChild(ul);
+}
+
 
     getMeteorologiaEntrenos(fechaInicio, fechaFin) {
         const url = "https://archive-api.open-meteo.com/v1/archive";
@@ -216,40 +200,31 @@ class Ciudad {
     }
 
     mostrarMeteorologiaEntrenos(datos) {
-        if (!datos || datos.length === 0) return;
+    if (!datos || datos.length === 0) return;
 
-        const main = document.querySelector('main');
-        const seccion = document.createElement('section');
-        main.appendChild(seccion);
+    const main = document.querySelector('main');
+    const seccion = document.createElement('section');
+    main.appendChild(seccion);
 
-        const h3 = document.createElement('h3');
-        h3.textContent = "Medias meteorológicas de los entrenamientos";
-        seccion.appendChild(h3);
+    const h3 = document.createElement('h3');
+    h3.textContent = "Medias meteorológicas de los entrenamientos";
+    seccion.appendChild(h3);
 
-        const tabla = document.createElement('table');
-        const thead = document.createElement('thead');
-        thead.innerHTML = `<tr>
-            <th>Fecha</th>
-            <th>Temperatura media (°C)</th>
-            <th>Lluvia media (mm)</th>
-            <th>Viento medio (km/h)</th>
-            <th>Humedad media (%)</th>
-        </tr>`;
-        tabla.appendChild(thead);
+    datos.forEach(d => {
+        const tituloDia = document.createElement('h4');
+        tituloDia.textContent = `Fecha: ${d.dia}`;
+        const ul = document.createElement('ul');
+        ul.innerHTML = `
+            <li><strong>Temperatura media:</strong> ${d.temperaturaMedia} °C</li>
+            <li><strong>Lluvia media:</strong> ${d.lluviaMedia} mm</li>
+            <li><strong>Viento medio:</strong> ${d.vientoMedio} km/h</li>
+            <li><strong>Humedad media:</strong> ${d.humedadMedia} %</li>
+        `;
+        seccion.appendChild(tituloDia);
+        seccion.appendChild(ul);
+    });
+}
 
-        const tbody = document.createElement('tbody');
-        datos.forEach(d => {
-            const fila = document.createElement('tr');
-            fila.innerHTML = `<td>${d.dia}</td>
-                              <td>${d.temperaturaMedia}</td>
-                              <td>${d.lluviaMedia}</td>
-                              <td>${d.vientoMedio}</td>
-                              <td>${d.humedadMedia}</td>`;
-            tbody.appendChild(fila);
-        });
-        tabla.appendChild(tbody);
-        seccion.appendChild(tabla);
-    }
 }
 
 // --- Uso ---

@@ -1,5 +1,6 @@
 <?php
-session_start();
+session_start(); 
+require_once "../cronometro.php"; 
 require_once "configuracion.php";
 
 $db = new Configuracion();

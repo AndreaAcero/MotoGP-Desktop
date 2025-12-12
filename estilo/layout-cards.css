@@ -37,6 +37,9 @@ main p {
   main {
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: auto; 
+    /* Redefinición de filas para adaptarse a 2 columnas */
+    /* Redefinición de columnas para adaptarse a 2 columnas */
+
   }
   main article {
       width: 40vw; /*Redifinicion del ancho de las cartas para mejorar la adaptabilidad en moviles*/

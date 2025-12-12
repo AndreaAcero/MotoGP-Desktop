@@ -22,7 +22,8 @@ header {
 */
 nav {
     display: flex;                 /* Activa Flexbox para los enlaces */
-    gap: 1rem;                     /* Espacio básico entre los enlaces */
+    gap: 1rem;      
+    width: 100%;                /* Espacio básico entre los enlaces */
 }
 
  /* TAREA 6: tamaño del mapa dinámico */
@@ -35,7 +36,7 @@ nav {
    
 
 /* Media query para pantallas pequeñas (móviles)*/
-@media (min-width: 320px) and (max-width: 799px) {
+@media  (max-width: 799px) {
  header {
         flex-direction: column;    /* Redefinición: antes era row */
         align-items: flex-start;   /* Redefinición: antes era center */
@@ -43,6 +44,7 @@ nav {
 
     nav {
         flex-direction: column;    /* Redefinición: antes era row */
+        width: 100%; 
     }
 
     header + p {
@@ -66,10 +68,10 @@ nav {
 
  body > div{
         height: 400px;
+        /* Redefinición del alto del mapa para móviles */
         margin: 0;
         border: none;
     }
 
-   
  
 }

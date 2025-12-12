@@ -40,6 +40,7 @@ if (count($_POST) > 0) {
     <link rel='stylesheet' href='estilo/estilo.css'>
     <link rel='stylesheet' href='estilo/layout.css'>
     <link rel='icon' href='multimedia/favicon.ico' type='image/x-icon'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
 </head>
 
 <body>

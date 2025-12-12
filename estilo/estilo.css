@@ -85,6 +85,7 @@ h3, h4, h5, h6 {
 nav {
     background-color: #222222; /* Fondo oscuro heredado a enlaces */
     /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
+    width: 100%; 
 }
 
 /* Selector nav a: enlaces dentro del menú */

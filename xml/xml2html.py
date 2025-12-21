@@ -18,9 +18,14 @@ class Html:
         self.addLine(f"    <title>{titulo}</title>")
         self.addLine("    <link rel='stylesheet' href='../estilo/estilo.css'>")
         self.addLine("    <link rel='stylesheet' href='../estilo/layout.css'>")
+        self.addLine("    <meta name='author' content='Andrea Acero Suárez' />")
+        self.addLine("    <meta name='description' content='Información detallada del circuito, galerías de fotos y videos, y clasificación del Mundial de MotoGP' />")
+        self.addLine("    <meta name='keywords' content='MotoGP, circuito, Silverstone, pilotos, clasificación, fotos, videos' />")
+        self.addLine("    <link rel='icon' href='../multimedia/favicon.ico' type='image/x-icon' />")
         self.addLine("</head>")
         self.addLine("<body>")
         self.addLine("<main>")
+
 
     # -------------------------------
     # Utilidades internas

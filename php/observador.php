@@ -14,7 +14,13 @@ $tiempo = $_SESSION['tiempo_final'];
 <head>
     <meta charset="UTF-8">
     <title>Observaciones del facilitador</title>
+    <meta name ="author" content ="Andrea Acero Suárez" />
+    <meta name ="description" content ="Interfaz creada con php para guardar observaciones del observador" />
+    <meta name ="keywords" content ="observador, prueba, php, comentarios" /> 
+    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" /> 
     <link rel="stylesheet" href="../estilo/estilo.css">
+    <link rel='icon' href='../multimedia/favicon.ico' type='image/x-icon'>
+
 </head>
 <body>
 

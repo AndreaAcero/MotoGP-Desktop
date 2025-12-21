@@ -6,6 +6,9 @@ class Configuracion {
     private $baseDatos = "uo287876_bd"; 
     public $conexion;
 
+    // Tablas permitidas para exportar
+    private $tablasPermitidas = ['datos_usuario', 'observaciones_facilitador', 'preguntas_test', 'resultados_test'];
+
     public function __construct() {
         $this->conexion = new mysqli($this->host, $this->usuario, $this->password, $this->baseDatos);
         if ($this->conexion->connect_error) {
@@ -14,7 +17,6 @@ class Configuracion {
     }
 
     public function reiniciarTablas() {
-        // corregido: la tabla REAL es datos_usuario
         $tablas = ['observaciones_facilitador', 'resultados_test', 'datos_usuario'];
 
         foreach ($tablas as $tabla) {
@@ -35,28 +37,35 @@ class Configuracion {
         }
     }
 
+    // Exportar CSV y forzar descarga
     public function exportarCSV($tabla) {
-        $archivo = $tabla . ".csv";
+        if (!in_array($tabla, $this->tablasPermitidas)) {
+            die("Error: la tabla '$tabla' no es válida para exportar.");
+        }
+
         $result = $this->conexion->query("SELECT * FROM $tabla");
 
         if ($result) {
-            $fp = fopen($archivo, 'w');
+            // Headers para descarga
+            header('Content-Type: text/csv; charset=utf-8');
+            header('Content-Disposition: attachment; filename=' . $tabla . '.csv');
 
-            // Sacar cabeceras
+            $fp = fopen('php://output', 'w');
+
+            // Cabeceras
             $row = $result->fetch_assoc();
             if ($row) {
-                fputcsv($fp, array_keys($row));
-                fputcsv($fp, $row);
-
+                fputcsv($fp, array_keys($row)); // Cabeceras
+                fputcsv($fp, $row); // Primer registro
                 while ($row = $result->fetch_assoc()) {
                     fputcsv($fp, $row);
                 }
             }
-            fclose($fp);
 
-            echo "Datos de $tabla exportados a $archivo correctamente.<br>";
+            fclose($fp);
+            exit; // Detener cualquier salida adicional
         } else {
-            echo "Error al exportar $tabla: " . $this->conexion->error . "<br>";
+            die("Error al exportar $tabla: " . $this->conexion->error);
         }
     }
 

@@ -41,6 +41,9 @@ if (count($_POST) > 0) {
     <link rel='stylesheet' href='estilo/layout.css'>
     <link rel='icon' href='multimedia/favicon.ico' type='image/x-icon'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <meta name ="author" content ="Andrea Acero Suárez" />
+    <meta name ="description" content ="Juego del cronomeco creado con php" />
+    <meta name ="keywords" content ="cronometro, iniciar, parar, detener, tiempo, php" /> 
 </head>
 
 <body>

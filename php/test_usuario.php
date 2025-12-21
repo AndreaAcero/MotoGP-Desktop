@@ -85,7 +85,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Datos del usuario – Test de usabilidad</title>
-    <link rel="stylesheet" href="../estilo/estilo.css">
+    <meta name ="author" content ="Andrea Acero Suárez" />
+    <meta name ="description" content ="interfaz para pruebas de usabilidad con PHP, información del usuario que realiza la prueba " />
+    <meta name ="keywords" content ="usuario, informacion, prueba, usabilidad, php" /> 
+    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" /> 
+    <link rel="stylesheet" href="../estilo/estilo.css">  
+    <link rel='icon' href='../multimedia/favicon.ico' type='image/x-icon'>
+ 
 </head>
 <body>
 

@@ -12,6 +12,7 @@
 /*
     Selector header: usa Flexbox para distribuir el contenido del encabezado
 */
+/* Especificidad 001 */
 header {
     display: flex;                 /* Activa Flexbox */
     justify-content: space-between; /* Separa h1 a la izquierda y nav a la derecha */
@@ -20,6 +21,7 @@ header {
 /*
     Selector nav: usa Flexbox para distribuir los enlaces del menú
 */
+/* Especificidad 001 */
 nav {
     display: flex;                 /* Activa Flexbox para los enlaces */
     gap: 1rem;      
@@ -27,6 +29,7 @@ nav {
 }
 
  /* TAREA 6: tamaño del mapa dinámico */
+    /* Especificidad 001 */
      body > div {
         width: 100%;
         height: 600px;
@@ -37,41 +40,41 @@ nav {
 
 /* Media query para pantallas pequeñas (móviles)*/
 @media  (max-width: 799px) {
- header {
+    /* Especificidad 001 */
+    header {
         flex-direction: column;    /* Redefinición: antes era row */
         align-items: flex-start;   /* Redefinición: antes era center */
     }
-
+    /* Especificidad 001 */
     nav {
         flex-direction: column;    /* Redefinición: antes era row */
         width: 100%; 
     }
-
+    /* Especificidad 001 */
     header + p {
         display: none;             /* Oculta las migas de pan en móviles */
     }
-
+    /*Especificidad 001 */
     video {
         width: 100%;               /* Redefinición: antes era auto */
         height: auto;              /* Mantiene proporción */
     }
-
+    /*Especificidad 001 */
     audio {
         width: 100%;               /* Redefinición: antes era auto */
     }
-
+    /*Especificidad 002 */
     article h2 img {
         width: 100%;               /* Redefinición: antes era 150px */
         height: auto;              /* Mantiene proporción */
         display : block;          /* Evita espacio inferior */
     }
-
- body > div{
-        height: 400px;
-        /* Redefinición del alto del mapa para móviles */
-        margin: 0;
-        border: none;
-    }
-
+    /*Especificidad 001 */
+    body > div{
+            height: 400px;
+            /* Redefinición del alto del mapa para móviles */
+            margin: 0;
+            border: none;
+        }
  
 }

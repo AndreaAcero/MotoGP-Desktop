@@ -38,18 +38,15 @@ class Noticia{
   mostrarNoticias() {
     const main = document.querySelector('main');
 
-    // Crear la segunda sección solo si no existe
     let section = main.querySelectorAll('section')[1];
     if (!section) {
         section = document.createElement('section');
         main.appendChild(section);
         
-        // Añadir encabezado de la sección
         const h2 = document.createElement('h2');
         h2.textContent = "Últimas noticias MotoGP 2025"; 
         section.appendChild(h2);
     }
-    // Limpiar artículos previos
     section.querySelectorAll('article').forEach(a => a.remove());
 
     this.#noticias.forEach(noticia => {

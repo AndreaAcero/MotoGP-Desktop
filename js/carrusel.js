@@ -52,23 +52,20 @@ class Carrusel {
             section = document.createElement('section');
             main.appendChild(section);
             
-            // Añadir encabezado de la sección
             const h2 = document.createElement('h2');
             h2.textContent = "Galeria de imagenes MotoGP"; 
             section.appendChild(h2);
         }
 
-        // Crear el primer artículo
+        
         this.#mostrarFotoActual(section);
 
-        // Iniciar el carrusel
         setInterval(() => this.cambiarFotografia(section), 3000);
     }
 
     #mostrarFotoActual(section) {
         const foto = this.#fotos[this.#actual];
 
-         // Limpiar solo los artículos previos
         Array.from(section.children)
             .filter(node => node.tagName.toLowerCase() === 'article')
             .forEach(a => a.remove());

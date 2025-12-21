@@ -36,17 +36,13 @@ class Circuito {
     const bodyOriginal = doc.body;
     const main = document.querySelector("main");
 
-    // Limpiar contenido anterior (excepto los inputs de archivo, si quieres conservarlos)
-    // Aquí puedes ajustarlo según tu necesidad
+    
     main.querySelectorAll("section").forEach(sec => sec.remove());
 
-    // Recorrer todos los nodos del body del archivo cargado
     Array.from(bodyOriginal.childNodes).forEach(node => {
-        // Si es main, copiamos su contenido dentro del main existente
         if (node.nodeName.toLowerCase() === "main") {
             Array.from(node.childNodes).forEach(n => main.appendChild(n));
         } else {
-            // Si es otra cosa (section, p, h2...) se inserta directamente en main
             main.appendChild(node);
         }
     });
@@ -129,12 +125,10 @@ class CargadorKML {
         lector.onload = (e) => {
             const textoKML = e.target.result;
 
-            // Procesar KML de manera asíncrona para no bloquear la UI
             setTimeout(() => {
                 const parser = new DOMParser();
                 const xml = parser.parseFromString(textoKML, "text/xml");
 
-                // PUNTO ORIGEN
                 const nodoOrigen = xml.querySelector("Point > coordinates");
                 if (nodoOrigen) {
                     const [lon, lat] = nodoOrigen.textContent.trim().split(",");
@@ -142,12 +136,10 @@ class CargadorKML {
                 }
                 
 
-                // TRAMOS
                 this.#tramos = [];
                 const lineas = xml.querySelectorAll("LineString > coordinates");
                 lineas.forEach((linea) => {
                     const pares = linea.textContent.trim().split(/\s+/);
-                    // Reducir puntos si hay demasiados para optimizar render
                     const tramo = pares.filter((_, i) => i % 2 === 0).map(par => {
                         const [lon, lat] = par.split(",");
                         return { lat: parseFloat(lat), lon: parseFloat(lon) };
@@ -169,19 +161,16 @@ class CargadorKML {
         return;
     }
 
-    // Limpiar marcador y polilíneas previas
     if (this.#marcador) this.#marcador.setMap(null);
     this.#polilineas.forEach(p => p.setMap(null));
     this.#polilineas = [];
 
-    // Marcador de inicio
     this.#marcador = new google.maps.Marker({
         position: { lat: this.#origen.lat, lng: this.#origen.lon },
         map: mapa,
         title: "Punto de inicio del circuito"
     });
 
-    // --- Conectar el origen con el primer punto del primer tramo ---
     const primerTramo = this.#tramos[0];
     const caminoInicial = [
         { lat: this.#origen.lat, lng: this.#origen.lon },
@@ -194,7 +183,6 @@ class CargadorKML {
         map: mapa
     });
     this.#polilineas.push(polilineaInicial);
-    // Dibujar todos los tramos
     this.#tramos.forEach(tramo => {
         const camino = tramo.map(p => ({ lat: p.lat, lng: p.lon }));
         const polilinea = new google.maps.Polyline({
@@ -208,7 +196,6 @@ class CargadorKML {
     
 );
 
-    // Ajustar límites del mapa para que se vea todo
     const limites = new google.maps.LatLngBounds();
     limites.extend(new google.maps.LatLng(this.#origen.lat, this.#origen.lon));
     this.#tramos.forEach(tramo => {
@@ -222,7 +209,6 @@ class CargadorKML {
 let mapaGoogle;
 
 function initMap() {
-    // Selecciona el div anónimo que es hijo directo de body y último
     const divMapa = document.querySelector("body > div");
     if (!divMapa) {
         console.error("No se encontró el div del mapa");
@@ -242,21 +228,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const cargadorSVG = new CargadorSVG();
     const cargadorKML = new CargadorKML();
 
-    // Input HTML
     const inputHTML = document.querySelector("main input[type='file']:first-of-type");
     inputHTML.addEventListener("change", (e) => {
         const archivo = e.target.files[0];
         circuito.leerArchivoHTML(archivo);
     });
 
-    // Input SVG
     const inputSVG = document.querySelector("main input[type='file']:nth-of-type(2)");
     inputSVG.addEventListener("change", (e) => {
         const archivo = e.target.files[0];
         cargadorSVG.leerArchivoSVG(archivo);
     });
 
-    // Input KML
     const inputKML = document.querySelector("main input[type='file']:nth-of-type(3)");
     inputKML.addEventListener("change", (e) => {
         const archivo = e.target.files[0];

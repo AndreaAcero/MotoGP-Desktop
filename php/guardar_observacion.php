@@ -11,7 +11,6 @@ $idResultado = intval($_POST['id_resultado']);
 
 $db = new Configuracion();
 
-// Insertar comentario del facilitador en la tabla real
 $stmt = $db->conexion->prepare(
     "INSERT INTO observaciones_facilitador (id_resultados, comentarios_facilitador)
      VALUES (?, ?)"

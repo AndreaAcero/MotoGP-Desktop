@@ -1,11 +1,9 @@
 class Cronometro {
-    // Atributos privados
     #tiempo = 0;
     #inicio = null;
     #corriendo = null;
     #usandoTemporal = false;
 
-    // Callback público para actualizar la vista
     onActualizar = null;
 
     constructor() {}
@@ -21,7 +19,6 @@ class Cronometro {
                 throw new Error("Temporal no disponible");
             }
         } catch (error) {
-            // Fallback: usamos Date
             this.#inicio = new Date();
             this.#usandoTemporal = false;
         }
@@ -74,20 +71,16 @@ class Cronometro {
     }
 }
 
-// JS que se ejecuta al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     const miCronometro = new Cronometro();
 
-    // Seleccionamos botones y párrafo sin usar id ni class
     const botones = document.querySelectorAll('main button');
     const parrafoTiempo = document.querySelector('main p');
 
-    // Callback para actualizar el DOM
     miCronometro.onActualizar = (textoTiempo) => {
         parrafoTiempo.textContent = textoTiempo;
     };
 
-    // Listeners de botones según el orden en el HTML
     botones[0].addEventListener('click', () => miCronometro.arrancar());
     botones[1].addEventListener('click', () => miCronometro.parar());
     botones[2].addEventListener('click', () => miCronometro.reiniciar());

@@ -58,7 +58,6 @@ class Ciudad {
         seccion.appendChild(coords);
     }
 
-    // --- MÉTODOS DE METEOROLOGÍA ---
 
     getMeteorologiaCarrera(fecha) {
         const url = "https://archive-api.open-meteo.com/v1/archive";
@@ -227,13 +226,11 @@ class Ciudad {
 
 }
 
-// --- Uso ---
 document.addEventListener('DOMContentLoaded', async () => {
     const ciudad = new Ciudad("Towcester", "Reino Unido", "Towcesterian");
     ciudad.setAtributos(150000, 52.13, -0.99);
     ciudad.setFechas("2025-05-25", "15:00", "2025-05-22", "2025-05-24");
 
-    // Primero se muestra la info básica
     ciudad.mostrarInformacionBasica();
 
     await ciudad.getMeteorologiaCarrera("2025-05-25");

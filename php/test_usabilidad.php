@@ -65,6 +65,12 @@ if (isset($_POST['guardar_preguntas'])) {
 <head>
     <meta charset="UTF-8">
     <title>Preguntas del test</title>
+    <meta name ="author" content ="Andrea Acero Suárez" />
+    <meta name ="description" content ="Interfaz creada con PHP para realizar pruebas de usabilidad, interfaz con las preguntas" />
+    <meta name ="keywords" content ="preguntas, prueba, usabilidad, test" /> 
+    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" /> 
+    <link rel='icon' href='../multimedia/favicon.ico' type='image/x-icon'>
+
 </head>
 <body>
 

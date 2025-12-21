@@ -11,16 +11,13 @@ class Memoria {
         this.#barajarCartas();
         this.#tablero_bloqueado = false;
 
-        // Iniciar cronómetro
         this.#cronometro.arrancar();
 
-        // Registrar eventos de click en las cartas
         const cartas = document.querySelectorAll('main article');
         cartas.forEach(carta => {
             carta.addEventListener('click', () => this.voltearCarta(carta));
         });
 
-        // Actualizar cronómetro en el párrafo
         const parrafoTiempo = document.querySelector('main p');
         this.#cronometro.onActualizar = (texto) => parrafoTiempo.textContent = texto;
     }

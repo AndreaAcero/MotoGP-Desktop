@@ -71,6 +71,12 @@ if (isset($_POST['guardar'])) {
 <head>
     <meta charset="UTF-8">
     <title>Valoración del usuario</title>
+    <meta name ="author" content ="Andrea Acero Suárez" />
+    <meta name ="description" content ="Interfaz que recoge la valoración del usuario a la aplicacion una vez realizada la prueba de usabilidad" />
+    <meta name ="keywords" content ="valoracion, prueba, usabilidad, php" /> 
+    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" /> 
+    <link rel='icon' href='../multimedia/favicon.ico' type='image/x-icon'>
+
 </head>
 <body>
 

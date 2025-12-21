@@ -233,9 +233,26 @@ aside a[href^="http"]:active {
 }
 
 /* Imágenes y vídeos responsivos para todo el HTML */
+/* Especificidad 001 */
 img, video {
     max-width: 100%;   /* Nunca exceder el ancho del contenedor */
     height: auto;      /* Mantener proporción */
     display: block;    /* Evita espacios extra debajo de la imagen/video */
     margin-bottom: 1rem; /* Espacio entre elementos */
+}
+
+button {
+    background-color: #059BFF; /* azul MotoGP */
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;      /* ligeramente redondeados */
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover */
+button:hover {
+    background-color: #0277bd; /* azul más oscuro al pasar el ratón */
 }

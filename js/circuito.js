@@ -90,17 +90,16 @@ class CargadorSVG {
         const svg = doc.documentElement;
 
         const main = document.querySelector("main");
-        const h3 = document.createElement('h3');
-        h3.textContent = "Representación archivo SVG";
+
         if (this.#contenedorSVG) this.#contenedorSVG.remove();
 
         this.#contenedorSVG = document.createElement("section");
-        this.#contenedorSVG.appendChild(h3);
         this.#contenedorSVG.appendChild(svg);
 
         main.appendChild(this.#contenedorSVG);
     }
 }
+
 
 class CargadorKML {
     #origen;   
@@ -227,22 +226,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const circuito = new Circuito();
     const cargadorSVG = new CargadorSVG();
     const cargadorKML = new CargadorKML();
+const inputs = Array.from(document.querySelectorAll("main input[type='file']"));
 
-    const inputHTML = document.querySelector("main input[type='file']:first-of-type");
-    inputHTML.addEventListener("change", (e) => {
-        const archivo = e.target.files[0];
-        circuito.leerArchivoHTML(archivo);
-    });
+// Primer input → HTML
+inputs[0].addEventListener("change", (e) => {
+    const archivo = e.target.files[0];
+    circuito.leerArchivoHTML(archivo);
+});
 
-    const inputSVG = document.querySelector("main input[type='file']:nth-of-type(2)");
-    inputSVG.addEventListener("change", (e) => {
-        const archivo = e.target.files[0];
-        cargadorSVG.leerArchivoSVG(archivo);
-    });
+// Segundo input → SVG
+inputs[1].addEventListener("change", (e) => {
+    const archivo = e.target.files[0];
+    cargadorSVG.leerArchivoSVG(archivo);
+});
 
-    const inputKML = document.querySelector("main input[type='file']:nth-of-type(3)");
-    inputKML.addEventListener("change", (e) => {
-        const archivo = e.target.files[0];
-        cargadorKML.leerArchivoKML(archivo, mapaGoogle);
-    });
+// Tercer input → KML
+inputs[2].addEventListener("change", (e) => {
+    const archivo = e.target.files[0];
+    cargadorKML.leerArchivoKML(archivo, mapaGoogle);
+});
+
 });

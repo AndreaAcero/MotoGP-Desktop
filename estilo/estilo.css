@@ -208,14 +208,14 @@ dd {
 }
 /*Especificidad 002: enlaces extornos dentro de aside*/
 aside a[href^="http"] {
-    color: #1e88e5; /* Color azul para enlaces externos */
+    color: #125087; /* Color azul para enlaces externos */
     text-decoration: underline;
     /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 }
 
 /* Especificidad 012: hover sobre enlaces externos */
 aside a[href^="http"]:hover {
-    color: #ff5722;              /* Naranja al pasar el ratón */
+    color: #9E2500;              /* Naranja al pasar el ratón */
     text-decoration: none;       /* Quita el subrayado */
     /*Advertencia: se redefine el color de fondo; herencia correcta del fondo */
 }
@@ -242,7 +242,7 @@ img, video {
 }
 
 button {
-    background-color: #059BFF; /* azul MotoGP */
+    background-color: #00538A; /* azul MotoGP */
     color: #fff;
     border: none;
     border-radius: 0.5em;      
@@ -250,9 +250,4 @@ button {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-/* Hover */
-button:hover {
-    background-color: #0277bd; /* azul más oscuro al pasar el ratón */
 }

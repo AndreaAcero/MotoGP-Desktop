@@ -16,6 +16,7 @@ require_once "clasificaciones.php";
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/favicon.ico" type="image/x-icon" />
+    
 </head>
 
 <body>
@@ -26,7 +27,7 @@ require_once "clasificaciones.php";
         <a href="piloto.html" title="Información del piloto">Piloto</a>  
         <a href="circuito.html" title="Información del circuito">Circuito</a>  
         <a href="meteorologia.html" title="Información de Meteorología">Meteorología</a>  
-        <a href="clasificaciones_inter.php" title="Información de clasificaciones" class="active">Clasificaciones</a>  
+        <a href="clasificacion_interface.php" title="Información de clasificaciones" class="active">Clasificaciones</a>  
         <a href="juegos.html" title="Información de juegos">Juegos</a>  
         <a href="ayuda.html" title="Información de ayuda">Ayuda</a>  
     </nav>
